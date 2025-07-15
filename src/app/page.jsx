@@ -75,8 +75,10 @@ function CaseStudies({ caseStudies }) {
           collaborate with luxury fashion designers to transform their artistic
           vision into impeccably crafted garments. Each project showcases our
           commitment to{' '}
-          <span className="font-semibold text-red-700">precision, quality</span>
-          , and creative partnership.
+          <span className="font-semibold text-red-700">
+            precision, quality, and creative partnership
+          </span>
+          .
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -182,7 +184,7 @@ function Services() {
 
 export const metadata = {
   description:
-    'We are a development studio working at the intersection of design and technology.',
+    'We are an award winning tailoring studio. Focused on production and manufacturing in high fashion',
 }
 
 export default async function Home() {
