@@ -9,19 +9,19 @@ import { PageIntro } from '@/components/PageIntro'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StylizedImage } from '@/components/StylizedImage'
 import { TagList, TagListItem } from '@/components/TagList'
-import imageLaptop from '@/images/laptop.jpg'
-import imageMeeting from '@/images/meeting.jpg'
-import imageWhiteboard from '@/images/whiteboard.jpg'
+import imageSampling from '@/images/sampling.webp'
+import imageProduction from '@/images/production.webp'
+import imageQuality from '@/images/qualityControl.webp'
 
 function Section({ title, image, children }) {
   return (
     <Container className="group/section [counter-increment:section]">
       <div className="lg:flex lg:items-center lg:justify-end lg:gap-x-8 lg:group-even/section:justify-start xl:gap-x-20">
         <div className="flex justify-center">
-          <FadeIn className="w-[33.75rem] flex-none lg:w-[45rem]">
+          <FadeIn className="w-[40rem] flex-none lg:w-[55rem]">
             <StylizedImage
               {...image}
-              sizes="(min-width: 1024px) 41rem, 31rem"
+              sizes="(min-width: 1024px) 52rem, 38rem"
               className="justify-center lg:justify-end lg:group-even/section:justify-start"
             />
           </FadeIn>
@@ -29,7 +29,7 @@ function Section({ title, image, children }) {
         <div className="mt-12 lg:mt-0 lg:w-[37rem] lg:flex-none lg:group-even/section:order-first">
           <FadeIn>
             <div
-              className="font-display text-base font-semibold before:text-neutral-300 before:content-['/_'] after:text-neutral-950 after:content-[counter(section,decimal-leading-zero)]"
+              className="font-display text-base font-semibold before:text-neutral-300 before:content-['/_'] after:text-red-700 after:content-[counter(section,decimal-leading-zero)]"
               aria-hidden="true"
             />
             <h2 className="mt-2 font-display text-3xl font-medium tracking-tight text-neutral-950 sm:text-4xl">
@@ -43,131 +43,149 @@ function Section({ title, image, children }) {
   )
 }
 
-function Discover() {
+function Sampling() {
   return (
-    <Section title="Discover" image={{ src: imageWhiteboard }}>
+    <Section
+      title="Sampling & Quotation"
+      image={{ src: imageSampling, shape: 1 }}
+    >
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          We work closely with our clients to understand their{' '}
-          <strong className="font-semibold text-neutral-950">needs</strong> and
-          goals, embedding ourselves in their every day operations to understand
-          what makes their business tick.
+          We can begin your project in two ways: creating a precise{' '}
+          <strong className="font-semibold text-neutral-950">sample</strong>{' '}
+          from your design specifications, or working from a sample you provide.
+          Our skilled seamstresses work meticulously to craft or replicate
+          garments that capture every detail of your vision.
         </p>
         <p>
-          Our team of private investigators shadow the company director’s for
-          several weeks while our account managers focus on going through their
-          trash. Our senior security experts then perform social engineering
-          hacks to gain access to their{' '}
-          <strong className="font-semibold text-neutral-950">business</strong>{' '}
-          accounts — handing that information over to our forensic accounting
-          team.
+          When working from your sample, we quote on an{' '}
+          <strong className="font-semibold text-neutral-950">
+            hourly basis
+          </strong>{' '}
+          initially, then provide a comprehensive production quote once we
+          understand the complexity and time investment required. We work with a
+          broad range of fabrics and materials to meet your design requirements.
         </p>
         <p>
-          Once the full audit is complete, we report back with a comprehensive{' '}
-          <strong className="font-semibold text-neutral-950">plan</strong> and,
-          more importantly, a budget.
+          Once we understand your project requirements through sampling, we
+          provide a comprehensive{' '}
+          <strong className="font-semibold text-neutral-950">quotation</strong>{' '}
+          that reflects the true cost of bringing your collection to life with
+          our quality standards.
         </p>
       </div>
 
       <h3 className="mt-12 font-display text-base font-semibold text-neutral-950">
-        Included in this phase
+        What we provide
       </h3>
       <TagList className="mt-4">
-        <TagListItem>In-depth questionnaires</TagListItem>
-        <TagListItem>Feasibility studies</TagListItem>
-        <TagListItem>Blood samples</TagListItem>
-        <TagListItem>Employee surveys</TagListItem>
-        <TagListItem>Proofs-of-concept</TagListItem>
-        <TagListItem>Forensic audit</TagListItem>
+        <TagListItem>Prototype development</TagListItem>
+        <TagListItem>Fabric compatibility testing</TagListItem>
+        <TagListItem>Technical specifications review</TagListItem>
+        <TagListItem>Detailed cost estimation</TagListItem>
+        <TagListItem>Timeline planning</TagListItem>
+        <TagListItem>Design consultation</TagListItem>
       </TagList>
     </Section>
   )
 }
 
-function Build() {
+function MaterialsAndProduction() {
   return (
-    <Section title="Build" image={{ src: imageLaptop, shape: 1 }}>
+    <Section
+      title="Materials & Production Setup"
+      image={{ src: imageProduction, shape: 1 }}
+    >
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          Based off of the discovery phase, we develop a comprehensive roadmap
-          for each product and start working towards delivery. The roadmap is an
-          intricately tangled mess of technical nonsense designed to drag the
-          project out as long as possible.
+          Upon project approval, we receive your{' '}
+          <strong className="font-semibold text-neutral-950">patterns</strong>,
+          fabrics, and all necessary materials. Our team conducts a thorough
+          inventory to ensure everything is ready for production.
         </p>
         <p>
-          Each client is assigned a key account manager to keep lines of
-          communication open and obscure the actual progress of the project.
-          They act as a buffer between the client’s incessant nagging and the
-          development team who are hard at work scouring open source projects
-          for code to re-purpose.
+          We treat your materials with care, understanding that each fabric
+          represents your creative vision. Our workspace is organized to
+          maintain the integrity of your materials throughout the{' '}
+          <strong className="font-semibold text-neutral-950">
+            manufacturing process
+          </strong>
+          .
         </p>
         <p>
-          Our account managers are trained to only reply to client emails after
-          9pm, several days after the initial email. This reinforces the general
-          aura that we are very busy and dissuades clients from asking for
-          changes.
+          Before production begins, we conduct a final review of all
+          specifications, ensuring our team understands your requirements and
+          quality expectations. This preparation helps ensure consistent results
+          across your{' '}
+          <strong className="font-semibold text-neutral-950">production</strong>
+          .
         </p>
       </div>
 
       <Blockquote
-        author={{ name: 'Debra Fiscal', role: 'CEO of Unseal' }}
+        author={{ name: 'Richard Malone', role: 'Fashion Designer' }}
         className="mt-12"
       >
-        Studio were so regular with their progress updates we almost began to
-        think they were automated!
+        The care S.A.M. takes with our materials and patterns gives us
+        confidence. They understand that whether we're working with luxury
+        fabrics or sustainable materials, each piece deserves the same level of
+        attention.
       </Blockquote>
     </Section>
   )
 }
 
-function Deliver() {
+function QualityAndDelivery() {
   return (
-    <Section title="Deliver" image={{ src: imageMeeting, shape: 2 }}>
+    <Section
+      title="Quality Control & Delivery"
+      image={{ src: imageQuality, shape: 1 }}
+    >
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          About halfway through the Build phase, we push each project out by 6
-          weeks due to a change in{' '}
+          Every single garment undergoes rigorous{' '}
           <strong className="font-semibold text-neutral-950">
-            requirements
-          </strong>
-          . This allows us to increase the budget a final time before launch.
+            quality control
+          </strong>{' '}
+          as it's completed. Our experienced seamstresses inspect each piece for
+          construction integrity, finish quality, and adherence to your
+          specifications.
         </p>
         <p>
-          Despite largely using pre-built components, most of the{' '}
-          <strong className="font-semibold text-neutral-950">progress</strong>{' '}
-          on each project takes place in the final 24 hours. The development
-          time allocated to each client is actually spent making augmented
-          reality demos that go viral on social media.
+          We understand that your brand reputation depends on the{' '}
+          <strong className="font-semibold text-neutral-950">
+            consistency
+          </strong>{' '}
+          and excellence of every piece that leaves our studio. This is why we
+          never rush the quality control process, ensuring each garment meets
+          our exacting standards before approval.
         </p>
         <p>
-          We ensure that the main pages of the site are{' '}
+          When required, we provide{' '}
           <strong className="font-semibold text-neutral-950">
-            fully functional
+            labeling and packaging
           </strong>{' '}
-          at launch — the auxiliary pages will, of course, be lorem ipusm shells
-          which get updated as part of our exorbitant{' '}
-          <strong className="font-semibold text-neutral-950">
-            maintenance
-          </strong>{' '}
-          retainer.
+          services, presenting your finished garments appropriately for their
+          intended use. Every order is carefully prepared for transport to your
+          specified destination.
         </p>
       </div>
 
       <h3 className="mt-12 font-display text-base font-semibold text-neutral-950">
-        Included in this phase
+        Final stage services
       </h3>
       <List className="mt-8">
-        <ListItem title="Testing">
-          Our projects always have 100% test coverage, which would be impressive
-          if our tests weren’t as porous as a sieve.
+        <ListItem title="Individual Inspection">
+          Each garment is thoroughly examined for construction quality,
+          measurements, and finishing details before approval.
         </ListItem>
-        <ListItem title="Infrastructure">
-          To ensure reliability we only use the best Digital Ocean droplets that
-          $4 a month can buy.
+        <ListItem title="Professional Labeling">
+          Custom labeling services to ensure your brand identity is perfectly
+          represented in every piece.
         </ListItem>
-        <ListItem title="Support">
-          Because we hold the API keys for every critical service your business
-          uses, you can expect a lifetime of support, and invoices, from us.
+        <ListItem title="Secure Packaging">
+          Careful packaging and preparation for transport, maintaining garment
+          integrity throughout delivery.
         </ListItem>
       </List>
     </Section>
@@ -177,7 +195,7 @@ function Deliver() {
 function Values() {
   return (
     <div className="relative mt-24 pt-24 sm:mt-32 sm:pt-32 lg:mt-40 lg:pt-40">
-      <div className="absolute inset-x-0 top-0 -z-10 h-[884px] overflow-hidden rounded-t-4xl bg-linear-to-b from-neutral-50">
+      <div className="absolute inset-x-0 top-0 -z-10 h-[884px] overflow-hidden rounded-t-4xl bg-gradient-to-b from-neutral-50">
         <GridPattern
           className="absolute inset-0 h-full w-full fill-neutral-100 stroke-neutral-950/5 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)]"
           yOffset={-270}
@@ -186,42 +204,47 @@ function Values() {
 
       <SectionIntro
         eyebrow="Our values"
-        title="Balancing reliability and innovation"
+        title="Craftsmanship built on trust and excellence"
       >
         <p>
-          We strive to stay at the forefront of emerging trends and
-          technologies, while completely ignoring them and forking that old
-          Rails project we feel comfortable using. We stand by our core values
-          to justify that decision.
+          Since 2015, we've built our reputation on unwavering commitment to
+          quality, confidentiality, and client partnership. These core values
+          guide every aspect of our work, from the first sample to final
+          delivery.
         </p>
       </SectionIntro>
 
       <Container className="mt-24">
         <GridList>
-          <GridListItem title="Meticulous">
-            The first part of any partnership is getting our designer to put
-            your logo in our template. The second step is getting them to do the
-            colors.
+          <GridListItem title="Precision">
+            Every stitch, every measurement, every detail is executed with
+            meticulous attention. We understand that luxury fashion demands
+            nothing less than perfection.
           </GridListItem>
-          <GridListItem title="Efficient">
-            We pride ourselves on never missing a deadline which is easy because
-            most of the work was done years ago.
+          <GridListItem title="Efficiency">
+            We pride ourselves on meeting tight deadlines without compromising
+            quality. Fashion moves fast, and we move with it while maintaining
+            our exacting standards.
           </GridListItem>
-          <GridListItem title="Adaptable">
-            Every business has unique needs and our greatest challenge is
-            shoe-horning those needs into something we already built.
+          <GridListItem title="Confidentiality">
+            Your designs and intellectual property are protected with the same
+            care we give to the finished garments. Complete discretion is
+            fundamental to our service.
           </GridListItem>
-          <GridListItem title="Honest">
-            We are transparent about all of our processes, banking on the simple
-            fact our clients never actually read anything.
+          <GridListItem title="Partnership">
+            We don't just manufacture your designs—we collaborate with you to
+            bring your creative vision to life, offering insights gained from
+            years of luxury fashion experience.
           </GridListItem>
-          <GridListItem title="Loyal">
-            We foster long-term relationships with our clients that go beyond
-            just delivering a product, allowing us to invoice them for decades.
+          <GridListItem title="Quality">
+            All work is completed in-house by our skilled team. We never
+            outsource because your reputation depends on the consistency and
+            excellence of every piece.
           </GridListItem>
-          <GridListItem title="Innovative">
-            The technological landscape is always evolving and so are we. We are
-            constantly on the lookout for new open source projects to clone.
+          <GridListItem title="Innovation">
+            While respecting traditional craftsmanship techniques, we embrace
+            modern methods and materials to deliver the best possible results
+            for contemporary fashion.
           </GridListItem>
         </GridList>
       </Container>
@@ -232,24 +255,25 @@ function Values() {
 export const metadata = {
   title: 'Our Process',
   description:
-    'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
+    'From sampling to delivery, discover how S.A.M. Creations transforms luxury fashion designs into impeccably crafted garments.',
 }
 
 export default function Process() {
   return (
     <>
-      <PageIntro eyebrow="Our process" title="How we work">
+      <PageIntro eyebrow="Our process" title="From concept to creation">
         <p>
-          We believe in efficiency and maximizing our resources to provide the
-          best value to our clients. The primary way we do that is by re-using
-          the same five projects we’ve been developing for the past decade.
+          Our streamlined process ensures that every garment we create meets the
+          exacting standards of luxury fashion. From initial sampling through
+          final delivery, we maintain complete quality control and
+          confidentiality at every step.
         </p>
       </PageIntro>
 
       <div className="mt-24 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-40 lg:space-y-40">
-        <Discover />
-        <Build />
-        <Deliver />
+        <Sampling />
+        <MaterialsAndProduction />
+        <QualityAndDelivery />
       </div>
 
       <Values />

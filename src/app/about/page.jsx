@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import { Border } from '@/components/Border'
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
@@ -9,45 +7,38 @@ import { PageIntro } from '@/components/PageIntro'
 import { PageLinks } from '@/components/PageLinks'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StatList, StatListItem } from '@/components/StatList'
-import imageAngelaFisher from '@/images/team/angela-fisher.jpg'
-import imageBenjaminRussel from '@/images/team/benjamin-russel.jpg'
-import imageBlakeReid from '@/images/team/blake-reid.jpg'
-import imageChelseaHagon from '@/images/team/chelsea-hagon.jpg'
-import imageDriesVincent from '@/images/team/dries-vincent.jpg'
-import imageEmmaDorsey from '@/images/team/emma-dorsey.jpg'
-import imageJeffreyWebb from '@/images/team/jeffrey-webb.jpg'
-import imageKathrynMurphy from '@/images/team/kathryn-murphy.jpg'
-import imageLeonardKrasner from '@/images/team/leonard-krasner.jpg'
-import imageLeslieAlexander from '@/images/team/leslie-alexander.jpg'
-import imageMichaelFoster from '@/images/team/michael-foster.jpg'
-import imageWhitneyFrancis from '@/images/team/whitney-francis.jpg'
 import { loadArticles } from '@/lib/mdx'
 
 function Culture() {
   return (
     <div className="mt-24 rounded-4xl bg-neutral-950 py-24 sm:mt-32 lg:mt-40 lg:py-32">
       <SectionIntro
-        eyebrow="Our culture"
-        title="Balance your passion with your passion for life."
+        eyebrow="Our values"
+        title="Craftsmanship that spans generations"
         invert
       >
         <p>
-          We are a group of like-minded people who share the same core values.
+          As a family business, we bring together traditional craftsmanship with
+          modern innovation, building lasting relationships with every client we
+          serve.
         </p>
       </SectionIntro>
       <Container className="mt-16">
         <GridList>
-          <GridListItem title="Loyalty" invert>
-            Our team has been with us since the beginning because none of them
-            are allowed to have LinkedIn profiles.
+          <GridListItem title="Excellence" invert>
+            Over 20 years of hard-earned experience ensures we maintain the
+            highest standards in every garment we create, from the most delicate
+            fabrics to leather and suede.
           </GridListItem>
-          <GridListItem title="Trust" invert>
-            We don’t care when our team works just as long as they are working
-            every waking second.
+          <GridListItem title="Sustainability" invert>
+            We're committed to positive change in the fashion industry through
+            our eco-conscious practices, upcycling initiatives, and waste
+            reduction efforts.
           </GridListItem>
-          <GridListItem title="Compassion" invert>
-            You never know what someone is going through at home and we make
-            sure to never find out.
+          <GridListItem title="Partnership" invert>
+            We put our heart and soul into building the best possible
+            relationship with each client, treating every design with complete
+            confidentiality and care.
           </GridListItem>
         </GridList>
       </Container>
@@ -55,123 +46,109 @@ function Culture() {
   )
 }
 
-const team = [
-  {
-    title: 'Leadership',
-    people: [
-      {
-        name: 'Leslie Alexander',
-        role: 'Co-Founder / CEO',
-        image: { src: imageLeslieAlexander },
-      },
-      {
-        name: 'Michael Foster',
-        role: 'Co-Founder / CTO',
-        image: { src: imageMichaelFoster },
-      },
-      {
-        name: 'Dries Vincent',
-        role: 'Partner & Business Relations',
-        image: { src: imageDriesVincent },
-      },
-    ],
-  },
-  {
-    title: 'Team',
-    people: [
-      {
-        name: 'Chelsea Hagon',
-        role: 'Senior Developer',
-        image: { src: imageChelseaHagon },
-      },
-      {
-        name: 'Emma Dorsey',
-        role: 'Senior Designer',
-        image: { src: imageEmmaDorsey },
-      },
-      {
-        name: 'Leonard Krasner',
-        role: 'VP, User Experience',
-        image: { src: imageLeonardKrasner },
-      },
-      {
-        name: 'Blake Reid',
-        role: 'Junior Copywriter',
-        image: { src: imageBlakeReid },
-      },
-      {
-        name: 'Kathryn Murphy',
-        role: 'VP, Human Resources',
-        image: { src: imageKathrynMurphy },
-      },
-      {
-        name: 'Whitney Francis',
-        role: 'Content Specialist',
-        image: { src: imageWhitneyFrancis },
-      },
-      {
-        name: 'Jeffrey Webb',
-        role: 'Account Coordinator',
-        image: { src: imageJeffreyWebb },
-      },
-      {
-        name: 'Benjamin Russel',
-        role: 'Senior Developer',
-        image: { src: imageBenjaminRussel },
-      },
-      {
-        name: 'Angela Fisher',
-        role: 'Front-end Developer',
-        image: { src: imageAngelaFisher },
-      },
-    ],
-  },
-]
-
 function Team() {
   return (
     <Container className="mt-24 sm:mt-32 lg:mt-40">
-      <div className="space-y-24">
-        {team.map((group) => (
-          <FadeInStagger key={group.title}>
-            <Border as={FadeIn} />
-            <div className="grid grid-cols-1 gap-6 pt-12 sm:pt-16 lg:grid-cols-4 xl:gap-8">
-              <FadeIn>
-                <h2 className="font-display text-2xl font-semibold text-neutral-950">
-                  {group.title}
-                </h2>
-              </FadeIn>
-              <div className="lg:col-span-3">
-                <ul
-                  role="list"
-                  className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8"
-                >
-                  {group.people.map((person) => (
-                    <li key={person.name}>
-                      <FadeIn>
-                        <div className="group relative overflow-hidden rounded-3xl bg-neutral-100">
-                          <Image
-                            alt=""
-                            {...person.image}
-                            className="h-96 w-full object-cover grayscale transition duration-500 motion-safe:group-hover:scale-105"
-                          />
-                          <div className="absolute inset-0 flex flex-col justify-end bg-linear-to-t from-black to-black/0 to-40% p-6">
-                            <p className="font-display text-base/6 font-semibold tracking-wide text-white">
-                              {person.name}
-                            </p>
-                            <p className="mt-2 text-sm text-white">
-                              {person.role}
-                            </p>
-                          </div>
-                        </div>
-                      </FadeIn>
-                    </li>
-                  ))}
-                </ul>
+      <FadeIn>
+        <h2 className="font-display text-2xl font-semibold text-red-700">
+          Our skilled team
+        </h2>
+      </FadeIn>
+      <div className="mt-12 space-y-16">
+        <FadeInStagger>
+          <Border as={FadeIn} />
+          <div className="grid grid-cols-1 gap-6 pt-12 sm:pt-16 lg:grid-cols-2 xl:gap-8">
+            <FadeIn>
+              <div className="space-y-6">
+                <h3 className="font-display text-xl font-semibold text-neutral-950">
+                  Leadership
+                </h3>
+                <div className="space-y-4">
+                  <div>
+                    <p className="font-semibold text-red-700">
+                      Katya Hadzhiyska
+                    </p>
+                    <p className="text-sm text-neutral-600">
+                      Founder, Managing Director & CEO
+                    </p>
+                    <p className="mt-2 text-sm text-neutral-600">
+                      With over 20 years of tailoring experience, Katya founded
+                      S.A.M. Creations in 2015 with a vision for exceptional
+                      quality and sustainable practices.
+                    </p>
+                  </div>
+                </div>
+                <div className="space-y-6">
+                  <h3 className="font-display text-xl font-semibold text-neutral-950">
+                    Operations
+                  </h3>
+
+                  <div>
+                    <p className="font-semibold text-red-700">
+                      Kaloyan Hadzhiyski
+                    </p>
+                    <p className="text-sm text-neutral-600">
+                      Operations & Design
+                    </p>
+                    <p className="mt-2 text-sm text-neutral-600">
+                      Continuing the family tradition, Kaloyan brings fresh
+                      perspectives to our operations while maintaining our
+                      commitment to craftsmanship excellence.
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </FadeInStagger>
-        ))}
+            </FadeIn>
+            <FadeIn>
+              <div className="space-y-6">
+                <h3 className="font-display text-xl font-semibold text-neutral-950">
+                  Our team of experts
+                </h3>
+                <div className="space-y-4 text-sm text-neutral-600">
+                  <div>
+                    <p className="font-semibold text-red-700">Seamstresses</p>
+                    <p>
+                      Our team of highly experienced seamstresses brings decades
+                      of expertise in garment construction. Skilled in working
+                      with complex patterns and intricate details—from delicate
+                      fabrics to structured tailoring—they are at the heart of
+                      our work, ensuring every stitch meets our exacting
+                      standards.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-red-700">
+                      Pattern Cutters
+                    </p>
+                    <p>
+                      Our expert pattern cutters are the bridge between design
+                      and construction. With an eye for proportion and
+                      precision, they interpret designer visions into accurate,
+                      workable patterns that guide every stage of garment
+                      creation. Their meticulous approach ensures proper fit,
+                      balanced silhouettes, and flawless foundations. They are
+                      the backbone of S.A.M. Creations.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-red-700">
+                      Production & Packaging Team
+                    </p>
+                    <p>
+                      Our Production & Packaging Team is involved throughout the
+                      manufacturing process, performing ongoing quality checks
+                      and identifying issues with a deep understanding of each
+                      production stage. When required, they package finished
+                      garments to client specifications. Their attention to
+                      detail ensures every delivery reflects the quality and
+                      craftsmanship of S.A.M. Creations.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </FadeInStagger>
       </div>
     </Container>
   )
@@ -180,7 +157,7 @@ function Team() {
 export const metadata = {
   title: 'About Us',
   description:
-    'We believe that our strength lies in our collaborative approach, which puts our clients at the center of everything we do.',
+    'Founded in 2015, S.A.M. Creations is a family business specializing in luxury fashion manufacturing with over 20 years of tailoring expertise.',
 }
 
 export default async function About() {
@@ -188,31 +165,51 @@ export default async function About() {
 
   return (
     <>
-      <PageIntro eyebrow="About us" title="Our strength is collaboration">
+      <PageIntro
+        eyebrow="About us"
+        title="A family tradition of exceptional craftsmanship"
+      >
         <p>
-          We believe that our strength lies in our collaborative approach, which
-          puts our clients at the center of everything we do.
+          Founded in{' '}
+          <span className="font-semibold text-red-700">
+            2015 by Katya Hadzhiyska
+          </span>{' '}
+          , S.A.M. Creations has quickly become renowned for delivering
+          exceptional quality in luxury fashion manufacturing, combining
+          traditional craftsmanship with innovative sustainable practices.
         </p>
         <div className="mt-10 max-w-2xl space-y-6 text-base">
           <p>
-            Studio was started by three friends who noticed that developer
-            studios were charging clients double what an in-house team would
-            cost. Since the beginning, we have been committed to doing things
-            differently by charging triple instead.
+            Located in South East London, we are a{' '}
+            <span className="font-semibold text-red-700">
+              close-knit family business built on passion
+            </span>{' '}
+            for the fashion industry and a commitment to producing top quality
+            garments. Our team of passionate seamstresses possesses a wealth of
+            industry experience and the expertise to bring the most intricate
+            high-fashion designs to life.
           </p>
           <p>
-            At Studio, we’re more than just colleagues — we’re a family. This
-            means we pay very little and expect people to work late. We want our
-            employees to bring their whole selves to work. In return, we just
-            ask that they keep themselves there until at least 6:30pm.
+            We don't believe in letting other people carry out work on our
+            behalf — after all, it's our skills and expertise that you're
+            placing your trust in. All work is completed in-house for the best
+            results, ensuring we get things exactly right, first time, every
+            time.
+          </p>
+          <p>
+            Our efficiency helps us ensure that our prices are extremely
+            competitive, while our commitment to sustainability through our Kat
+            & Rose brand and eco-conscious practices positions us at the
+            forefront of responsible fashion manufacturing.
           </p>
         </div>
       </PageIntro>
+
       <Container className="mt-16">
         <StatList>
-          <StatListItem value="35" label="Underpaid employees" />
-          <StatListItem value="52" label="Placated clients" />
-          <StatListItem value="$25M" label="Invoices billed" />
+          <StatListItem value="2015" label="Founded with passion" />
+          <StatListItem value="25+" label="Years of expertise" />
+          <StatListItem value="100%" label="In-house production" />
         </StatList>
       </Container>
 
@@ -223,7 +220,7 @@ export default async function About() {
       <PageLinks
         className="mt-24 sm:mt-32 lg:mt-40"
         title="From the blog"
-        intro="Our team of experienced designers and developers has just one thing on their mind; working on your ideas to draw a smile on the face of your users worldwide. From conducting Brand Sprints to UX Design."
+        intro="Stay updated with our latest insights on sustainable fashion, industry trends, and behind-the-scenes stories from our South East London studio."
         pages={blogArticles}
       />
 

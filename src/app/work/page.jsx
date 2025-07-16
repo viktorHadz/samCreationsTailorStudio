@@ -8,15 +8,14 @@ import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { PageIntro } from '@/components/PageIntro'
-import { Testimonial } from '@/components/Testimonial'
-import logoBrightPath from '@/images/clients/bright-path/logo-dark.svg'
-import logoFamilyFund from '@/images/clients/family-fund/logo-dark.svg'
-import logoGreenLife from '@/images/clients/green-life/logo-dark.svg'
-import logoHomeWork from '@/images/clients/home-work/logo-dark.svg'
-import logoMailSmirk from '@/images/clients/mail-smirk/logo-dark.svg'
-import logoNorthAdventures from '@/images/clients/north-adventures/logo-dark.svg'
-import logoPhobia from '@/images/clients/phobia/logo-dark.svg'
-import logoUnseal from '@/images/clients/unseal/logo-dark.svg'
+import cawleyDark from '@/images/clients/hannah-cawley/cawleyDarkLogo.svg'
+import rQuinnDark from '@/images/clients/richard-quinn/darkRQuinnLogo.svg'
+import isabelMansDark from '@/images/clients/isabel-mans/darkIsabelMans.svg'
+import fabricFreedomDark from '@/images/clients/fabric-freedom/darkFabricFreedom.svg'
+import serenaButeDark from '@/images/clients/serena-bute/darkSerenaBute.svg'
+import tataNakaDark from '@/images/clients/tata-naka/darkLettersTataNaka.svg'
+import richardMaloneDark from '@/images/clients/richard-malone/darkRichardMalone.svg'
+import clioPeppiattDark from '@/images/clients/clio-peppiatt/clioPeppiattDark.svg'
 import { formatDate } from '@/lib/formatDate'
 import { loadCaseStudies } from '@/lib/mdx'
 
@@ -25,7 +24,7 @@ function CaseStudies({ caseStudies }) {
     <Container className="mt-40">
       <FadeIn>
         <h2 className="font-display text-2xl font-semibold text-neutral-950">
-          Case studies
+          Awards & Achievements
         </h2>
       </FadeIn>
       <div className="mt-10 space-y-20 sm:space-y-24 lg:space-y-32">
@@ -38,7 +37,7 @@ function CaseStudies({ caseStudies }) {
                     <Image
                       src={caseStudy.logo}
                       alt=""
-                      className="h-16 w-16 flex-none"
+                      className="size-40 flex-none"
                       unoptimized
                     />
                     <h3 className="mt-6 text-sm font-semibold text-neutral-950 sm:mt-0 lg:mt-8">
@@ -68,9 +67,9 @@ function CaseStudies({ caseStudies }) {
                   <div className="mt-8 flex">
                     <Button
                       href={caseStudy.href}
-                      aria-label={`Read case study: ${caseStudy.client}`}
+                      aria-label={`Read more about this milestone: ${caseStudy.client}`}
                     >
-                      Read case study
+                      Explore milestone
                     </Button>
                   </div>
                   {caseStudy.testimonial && (
@@ -92,14 +91,14 @@ function CaseStudies({ caseStudies }) {
 }
 
 const clients = [
-  ['Phobia', logoPhobia],
-  ['Family Fund', logoFamilyFund],
-  ['Unseal', logoUnseal],
-  ['Mail Smirk', logoMailSmirk],
-  ['Home Work', logoHomeWork],
-  ['Green Life', logoGreenLife],
-  ['Bright Path', logoBrightPath],
-  ['North Adventures', logoNorthAdventures],
+  ['Hannah Cawley', cawleyDark],
+  ['Richard Quinn', rQuinnDark],
+  ['Fabrics for Freedom', fabricFreedomDark],
+  ['Isabel Mans', isabelMansDark],
+  ['Tata Naka', tataNakaDark],
+  ['Serena Bute', serenaButeDark],
+  ['Richard Malone', richardMaloneDark],
+  ['Clio Peppiatt', clioPeppiattDark],
 ]
 
 function Clients() {
@@ -107,7 +106,7 @@ function Clients() {
     <Container className="mt-24 sm:mt-32 lg:mt-40">
       <FadeIn>
         <h2 className="font-display text-2xl font-semibold text-neutral-950">
-          You’re in good company
+          Trusted by leading designers
         </h2>
       </FadeIn>
       <FadeInStagger className="mt-10" faster>
@@ -133,8 +132,7 @@ function Clients() {
 
 export const metadata = {
   title: 'Our Work',
-  description:
-    'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
+  description: 'Discover our achievements and more.',
 }
 
 export default async function Work() {
@@ -144,24 +142,17 @@ export default async function Work() {
     <>
       <PageIntro
         eyebrow="Our work"
-        title="Proven solutions for real-world problems."
+        title="Excellence recognized across the fashion industry"
       >
         <p>
-          We believe in efficiency and maximizing our resources to provide the
-          best value to our clients. The primary way we do that is by re-using
-          the same five projects we’ve been developing for the past decade.
+          Our commitment to exceptional craftsmanship and sustainable practices
+          has earned us prestigious awards and the trust of leading fashion
+          designers. From eco-conscious manufacturing to launching our own
+          sustainable brand, we continue to set new standards in the industry.
         </p>
       </PageIntro>
 
       <CaseStudies caseStudies={caseStudies} />
-
-      <Testimonial
-        className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Mail Smirk', logo: logoMailSmirk }}
-      >
-        We approached <em>Studio</em> because we loved their past work. They
-        delivered something remarkably similar in record time.
-      </Testimonial>
 
       <Clients />
 
