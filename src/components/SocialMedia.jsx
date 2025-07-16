@@ -50,10 +50,16 @@ function DribbbleIcon(props) {
 }
 
 export const socialMediaProfiles = [
-  { title: 'Facebook', href: 'https://facebook.com', icon: FacebookIcon },
-  { title: 'Instagram', href: 'https://instagram.com', icon: InstagramIcon },
-  { title: 'GitHub', href: 'https://github.com', icon: GitHubIcon },
-  { title: 'Dribbble', href: 'https://dribbble.com', icon: DribbbleIcon },
+  {
+    title: 'Facebook',
+    href: 'https://www.facebook.com/s.a.m.creationsyk/',
+    icon: FacebookIcon,
+  },
+  {
+    title: 'Instagram',
+    href: 'https://www.instagram.com/katnrose/',
+    icon: InstagramIcon,
+  },
 ]
 
 export function SocialMedia({ className, invert = false }) {
@@ -73,10 +79,12 @@ export function SocialMedia({ className, invert = false }) {
             aria-label={socialMediaProfile.title}
             className={clsx(
               'transition',
-              invert ? 'hover:text-neutral-200' : 'hover:text-neutral-700',
+              invert ? 'hover:text-neutral-200' : 'hover:text-red-700',
             )}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <socialMediaProfile.icon className="h-6 w-6 fill-current" />
+            <socialMediaProfile.icon className="size-6 fill-current" />
           </Link>
         </li>
       ))}

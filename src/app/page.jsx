@@ -92,7 +92,7 @@ function CaseStudies({ caseStudies }) {
                     <Image
                       src={caseStudy.logo}
                       alt={caseStudy.client}
-                      className="size-20"
+                      className="size-26"
                       unoptimized
                     />
                   </Link>
@@ -184,7 +184,7 @@ function Services() {
 
 export const metadata = {
   description:
-    'We are an award winning tailoring studio. Focused on production and manufacturing in high fashion',
+    'We are an award-winning, London-based tailoring studio focused on production and manufacturing, while also providing alterations for the community.',
 }
 
 export default async function Home() {
