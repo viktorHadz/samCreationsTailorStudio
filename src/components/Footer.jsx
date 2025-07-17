@@ -17,7 +17,7 @@ function Navigation() {
   return (
     <nav
       aria-label="Footer"
-      className="flex flex-wrap justify-center gap-x-12 gap-y-3 text-sm/6"
+      className="flex flex-wrap justify-center gap-x-12 text-sm/6"
     >
       {navigation.map((item) => (
         <a
@@ -38,7 +38,7 @@ export function Footer() {
       <FadeIn>
         <div className="grid grid-cols-1 gap-x-8">
           <div className="relative">
-            <div className="absolute -top-8 left-1/2 h-px w-16 -translate-x-1/2 bg-gradient-to-r from-transparent via-red-700 to-transparent"></div>
+            <div className="absolute -top-12 left-1/2 h-px w-16 -translate-x-1/2 bg-gradient-to-r from-transparent via-red-700 to-transparent"></div>
             <Navigation />
           </div>
         </div>
