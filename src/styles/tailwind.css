@@ -34,7 +34,6 @@
 
   --font-display: Mona Sans, ui-sans-serif, system-ui, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-
   --font-display--font-variation-settings: 'wdth' 125;
 
   --font-display-length: 2;
@@ -43,4 +42,73 @@
 
   --breakpoint-2xs: 30rem;
   --breakpoint-3xs: 25rem;
+  --animate-expand-left: expand-width-left 0.5s ease-out forwards;
+  --animate-expand-right: expand-width-right 0.5s ease-out forwards;
+
+  @keyframes expand-width-left {
+    from {
+      x: 0;
+      width: 0;
+    }
+    to {
+      x: 0;
+      width: 394px;
+    }
+  }
+
+  @keyframes expand-width-right {
+    from {
+      x: 788px;
+      width: 0;
+    }
+    to {
+      x: 394px;
+      width: 394px;
+    }
+  }
+}
+/* Add these CSS classes to your stylesheet */
+
+.animate-bounce-svg {
+  animation: bounce-svg infinite;
+}
+
+.animate-pulse-svg {
+  animation: pulse-svg infinite;
+}
+
+.animate-ping-svg {
+  animation: ping-svg infinite;
+}
+
+@keyframes bounce-svg {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse-svg {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes ping-svg {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  75%,
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
 }

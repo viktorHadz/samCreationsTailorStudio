@@ -6,3 +6,10 @@
   font-stretch: 75% 125%;
   src: url('../fonts/Mona-Sans.var.woff2') format('woff2');
 }
+@font-face {
+  font-family: 'Zain';
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+  src: url('../fonts/Zain-Bold.woff2') format('woff2');
+}

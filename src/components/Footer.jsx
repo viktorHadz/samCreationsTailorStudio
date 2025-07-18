@@ -44,10 +44,7 @@ export function Footer() {
         </div>
         <div className="mt-12 mb-12 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12">
           <Link href="/" aria-label="Home" className="group">
-            <Logo
-              className="h-8 transition-all duration-300 group-hover:scale-105"
-              fillOnHover
-            />
+            <Logo className="h-8 transition-all duration-300 group-hover:scale-105" />
           </Link>
 
           <SocialMedia></SocialMedia>
