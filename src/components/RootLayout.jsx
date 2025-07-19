@@ -59,13 +59,9 @@ function Header({
           onMouseEnter={() => setLogoHovered(true)}
           onMouseLeave={() => setLogoHovered(false)}
         >
-          <Logo
-            className="hidden h-8 sm:block"
-            invert={invert}
-            filled={logoHovered}
-          />
+          <Logo invert={invert} filled={logoHovered} />
         </Link>
-        <div className="flex items-center gap-x-8">
+        <div className="flex flex-col items-end gap-y-8 md:flex-row md:items-center md:gap-x-8">
           <Button href="/contact" invert={invert}>
             Contact us
           </Button>
@@ -76,7 +72,7 @@ function Header({
             aria-expanded={expanded ? 'true' : 'false'}
             aria-controls={panelId}
             className={clsx(
-              'group -m-2.5 rounded-full p-2.5 transition',
+              'group -m-2.5 cursor-pointer rounded-full p-2.5 transition',
               invert ? 'hover:bg-white/10' : 'hover:bg-neutral-950/10',
             )}
             aria-label="Toggle navigation"

@@ -82,40 +82,39 @@ function CaseStudies({ caseStudies }) {
         </p>
       </SectionIntro>
       <Container className="mt-16">
-        <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <FadeInStagger className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           {caseStudies.map((caseStudy) => (
             <FadeIn key={caseStudy.href} className="flex">
-              <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 hover:ring-red-700/10 sm:p-8">
-                <h3>
-                  <Link href={caseStudy.href}>
-                    <span className="absolute inset-0 rounded-3xl" />
+              <Link href={caseStudy.href} className="w-full">
+                <article className="group relative flex w-full cursor-pointer flex-col rounded-3xl p-4 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 hover:ring-red-700/10 sm:p-6">
+                  <h3 className="absolute -top-5 right-0">
                     <Image
                       src={caseStudy.logo}
                       alt={caseStudy.client}
-                      className="size-26"
+                      className="size-20 brightness-70 grayscale transition-all duration-500 group-hover:brightness-100 group-hover:grayscale-0"
                       unoptimized
                     />
-                  </Link>
-                </h3>
-                <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
-                  <time
-                    dateTime={caseStudy.date.split('-')[0]}
-                    className="font-semibold text-red-700"
-                  >
-                    {caseStudy.date.split('-')[0]}
-                  </time>
-                  <span className="text-neutral-300" aria-hidden="true">
-                    /
-                  </span>
-                  <span>Milestone</span>
-                </p>
-                <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
-                  {caseStudy.title}
-                </p>
-                <p className="mt-4 text-base text-neutral-600">
-                  {caseStudy.description}
-                </p>
-              </article>
+                  </h3>
+                  <div className="mt-3 flex items-center gap-x-2 text-sm text-neutral-950">
+                    <time
+                      dateTime={caseStudy.date.split('-')[0]}
+                      className="font-semibold text-red-700"
+                    >
+                      {caseStudy.date.split('-')[0]}
+                    </time>
+                    <span className="text-neutral-300" aria-hidden="true">
+                      /
+                    </span>
+                    <span>Milestone</span>
+                  </div>
+                  <p className="mt-3 font-display text-xl font-semibold text-neutral-950">
+                    {caseStudy.title}
+                  </p>
+                  <p className="mt-2 text-sm text-neutral-600">
+                    {caseStudy.description}
+                  </p>
+                </article>
+              </Link>
             </FadeIn>
           ))}
         </FadeInStagger>
