@@ -1,10 +1,8 @@
 import Link from 'next/link'
-import Image from 'next/image'
 
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { Logo } from '@/components/Logo'
-import { socialMediaProfiles } from '@/components/SocialMedia'
 import { SocialMedia } from '@/components/SocialMedia'
 
 const navigation = [
@@ -24,7 +22,7 @@ function Navigation() {
         <a
           key={item.title}
           href={item.href}
-          className="rounded-md px-2 py-1 text-gray-600 transition-colors duration-200 hover:bg-gray-50 hover:text-red-700"
+          className="rounded-md px-2 py-1 text-gray-600 transition-colors duration-200 hover:text-red-700"
         >
           {item.title}
         </a>
@@ -48,14 +46,13 @@ export function Footer() {
           {/* Mobile Layout: Stacked */}
           <div className="flex flex-col items-center gap-8 sm:hidden">
             <Link href="/" aria-label="Home" className="group">
-              <Logo className="scale-75" />
+              <Logo />
             </Link>
 
             <SocialMedia className="flex justify-center" />
 
             <p className="text-center text-xs text-neutral-700">
-              © {new Date().getFullYear()} S.A.M. Creations Ltd. All rights
-              reserved.
+              {new Date().getFullYear()} S.A.M. Creations Ltd.
             </p>
           </div>
 
@@ -64,7 +61,7 @@ export function Footer() {
             {/* First Row: Logo and Social Media */}
             <div className="flex items-center justify-between">
               <Link href="/" aria-label="Home" className="group">
-                <Logo className="scale-90" />
+                <Logo />
               </Link>
               <SocialMedia />
             </div>
@@ -72,8 +69,7 @@ export function Footer() {
             {/* Second Row: Copyright */}
             <div className="flex justify-center">
               <p className="text-sm text-neutral-700">
-                © {new Date().getFullYear()} S.A.M. Creations Ltd. All rights
-                reserved.
+                {new Date().getFullYear()} S.A.M. Creations Ltd.
               </p>
             </div>
           </div>
@@ -88,7 +84,7 @@ export function Footer() {
               <SocialMedia />
               <div className="h-6 w-px bg-neutral-950/10"></div>
               <p className="text-sm whitespace-nowrap text-neutral-700">
-                © {new Date().getFullYear()} S.A.M. Creations Ltd
+                {new Date().getFullYear()} S.A.M. Creations Ltd.
               </p>
             </div>
           </div>

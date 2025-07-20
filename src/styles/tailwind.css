@@ -34,13 +34,15 @@
 
   --font-display: Mona Sans, ui-sans-serif, system-ui, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-display--font-variation-settings: 'wdth' 125;
+
   --font-zain: Zain, ui-sans-serif, system-ui, sans-serif;
-  --color-red-700: #a32f31;
+
+  --font-display--font-variation-settings: 'wdth' 125;
   --font-display-length: 2;
 
-  --breakpoint-xs: 35rem;
+  --color-red-700: #a32f31;
 
+  --breakpoint-xs: 35rem;
   --breakpoint-2xs: 30rem;
   --breakpoint-3xs: 25rem;
 

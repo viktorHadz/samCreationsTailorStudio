@@ -52,16 +52,20 @@ function Header({
 
   return (
     <Container>
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col items-center justify-between sm:flex-row">
         <Link
           href="/"
           aria-label="Home"
           onMouseEnter={() => setLogoHovered(true)}
           onMouseLeave={() => setLogoHovered(false)}
         >
-          <Logo invert={invert} filled={logoHovered} />
+          <Logo
+            invert={invert}
+            filled={logoHovered}
+            className={'hidden sm:block'}
+          />
         </Link>
-        <div className="flex flex-col items-end gap-y-8 md:flex-row md:items-center md:gap-x-8">
+        <div className="flex w-full justify-end gap-x-8">
           <Button href="/contact" invert={invert}>
             Contact us
           </Button>
@@ -72,7 +76,7 @@ function Header({
             aria-expanded={expanded ? 'true' : 'false'}
             aria-controls={panelId}
             className={clsx(
-              'group -m-2.5 cursor-pointer rounded-full p-2.5 transition',
+              'group cursor-pointer rounded-full p-2.5 transition',
               invert ? 'hover:bg-white/10' : 'hover:bg-neutral-950/10',
             )}
             aria-label="Toggle navigation"
@@ -116,7 +120,7 @@ function NavigationItem({ href, children }) {
 
 function Navigation() {
   return (
-    <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
+    <nav className="mt-px font-display text-4xl font-medium tracking-tight text-white sm:text-5xl">
       <NavigationRow>
         <NavigationItem href="/about">About Us</NavigationItem>
         <NavigationItem href="/process">Our Process</NavigationItem>
@@ -160,8 +164,8 @@ function RootLayoutInner({ children }) {
       <header>
         <div
           className="absolute top-2 right-0 left-0 z-40 pt-14"
-          aria-hidden={expanded ? 'true' : undefined}
-          inert={expanded ? '' : undefined}
+          // aria-hidden={expanded ? 'true' : undefined}
+          // inert={expanded ? '' : undefined}
         >
           <Header
             panelId={panelId}
@@ -182,7 +186,7 @@ function RootLayoutInner({ children }) {
           id={panelId}
           style={{ height: expanded ? 'auto' : '0.5rem' }}
           className="relative z-50 overflow-hidden bg-neutral-950 pt-2"
-          aria-hidden={expanded ? undefined : 'true'}
+          // aria-hidden={expanded ? undefined : 'true'}
           inert={expanded ? undefined : ''}
         >
           <motion.div layout className="bg-neutral-800">

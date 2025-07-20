@@ -87,7 +87,7 @@ export function SocialMedia({ className, invert = false }) {
             aria-label={socialMediaProfile.title}
             className={clsx(
               'transition',
-              invert ? 'hover:text-neutral-200' : 'hover:text-red-700',
+              invert ? 'hover:text-red-700' : 'hover:text-red-700',
             )}
             target="_blank"
             rel="noopener noreferrer"

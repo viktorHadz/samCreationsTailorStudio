@@ -91,7 +91,7 @@ function CaseStudies({ caseStudies }) {
                     <Image
                       src={caseStudy.logo}
                       alt={caseStudy.client}
-                      className="size-20 brightness-70 grayscale transition-all duration-500 group-hover:brightness-100 group-hover:grayscale-0"
+                      className="size-20 transition-all duration-500 group-hover:brightness-100 lg:brightness-70 lg:grayscale lg:group-hover:grayscale-0"
                       unoptimized
                     />
                   </h3>
@@ -195,8 +195,7 @@ export default async function Home() {
         <FadeIn className="max-w-3xl">
           <h1 className="font-display text-4xl font-medium tracking-tight [text-wrap:balance] text-neutral-950 sm:text-7xl">
             <span className="relative">
-              Award-winning luxury garment manufacturing
-              <span className="absolute -bottom-1 left-0 h-1 w-16 rounded-full bg-red-700"></span>
+              Award-winning garment manufacturing
             </span>{' '}
             in London.
           </h1>
