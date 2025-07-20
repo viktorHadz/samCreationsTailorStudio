@@ -9,6 +9,7 @@ const navigation = [
   { title: 'About', href: '/about' },
   { title: 'Process', href: '/process' },
   { title: 'Achievements', href: '/work' },
+  { title: 'Gallery', href: '/work' },
   { title: 'Contact us', href: '/contact' },
 ]
 
@@ -52,7 +53,7 @@ export function Footer() {
             <SocialMedia className="flex justify-center" />
 
             <p className="text-center text-xs text-neutral-700">
-              {new Date().getFullYear()} S.A.M. Creations Ltd.
+              {new Date().getFullYear()} S.A.M. Creations Ltd. Est - 2015
             </p>
           </div>
 
@@ -69,7 +70,7 @@ export function Footer() {
             {/* Second Row: Copyright */}
             <div className="flex justify-center">
               <p className="text-sm text-neutral-700">
-                {new Date().getFullYear()} S.A.M. Creations Ltd.
+                {new Date().getFullYear()} S.A.M. Creations Ltd. Est - 2015
               </p>
             </div>
           </div>
@@ -84,7 +85,7 @@ export function Footer() {
               <SocialMedia />
               <div className="h-6 w-px bg-neutral-950/10"></div>
               <p className="text-sm whitespace-nowrap text-neutral-700">
-                {new Date().getFullYear()} S.A.M. Creations Ltd.
+                {new Date().getFullYear()} S.A.M. Creations Ltd. Est - 2015
               </p>
             </div>
           </div>

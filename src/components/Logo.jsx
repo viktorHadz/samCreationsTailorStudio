@@ -12,7 +12,7 @@ export function Logo({ className, invert = false, filled = false, ...props }) {
       className={clsx('group flex cursor-pointer flex-col', className)}
       {...props}
     >
-      <svg viewBox="0 0 788 549" fill="none" className="size-32">
+      <svg viewBox="0 0 788 549" fill="none" className="size-56">
         <defs>
           {/* Fills for diamond shape*/}
           <clipPath id="top-left">

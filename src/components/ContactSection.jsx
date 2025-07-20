@@ -22,11 +22,7 @@ export function ContactSection() {
                   standards.
                 </p>
                 <div className="mt-8">
-                  <Button
-                    href="/contact"
-                    invert
-                    className="transition-colors hover:bg-red-700 hover:text-white"
-                  >
+                  <Button href="/contact" invert className="">
                     Let's Discuss
                   </Button>
                 </div>

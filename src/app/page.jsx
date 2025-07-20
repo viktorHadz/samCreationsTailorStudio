@@ -191,7 +191,7 @@ export default async function Home() {
 
   return (
     <>
-      <Container className="mt-24 sm:mt-32 md:mt-56">
+      <Container className="mt-24 sm:mt-64">
         <FadeIn className="max-w-3xl">
           <h1 className="font-display text-4xl font-medium tracking-tight [text-wrap:balance] text-neutral-950 sm:text-7xl">
             <span className="relative">
@@ -205,9 +205,9 @@ export default async function Home() {
               S.A.M. Creations Ltd
             </span>{' '}
             — specializing in Sampling, Alterations and Manufacturing for luxury
-            fashion. From our South East London studio, we bring exceptional
-            designers' visions to life with uncompromising quality and
-            craftsmanship.
+            fashion. From our South East London studio, we bring designers'
+            visions to life with uncompromising quality and craftsmanship since
+            2015.
           </p>
         </FadeIn>
       </Container>

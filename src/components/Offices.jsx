@@ -23,8 +23,6 @@ export function Offices({ invert = false, ...props }) {
       <Office name="South East London Studio" invert={invert}>
         174-176 Hither Green Lane
         <br />
-        Hither Green Studios,
-        <br />
         London,
         <br />
         SE13 6QB

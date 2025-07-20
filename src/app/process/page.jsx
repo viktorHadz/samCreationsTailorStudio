@@ -58,20 +58,18 @@ function Sampling() {
           garments that capture every detail of your vision.
         </p>
         <p>
-          When working from your sample, we quote on an{' '}
+          When producing the sample, we quote on an{' '}
           <strong className="font-semibold text-neutral-950">
             hourly basis
           </strong>{' '}
-          initially, then provide a comprehensive production quote once we
-          understand the complexity and time investment required. We work with a
-          broad range of fabrics and materials to meet your design requirements.
+          initially, then provide a comprehensive production{' '}
+          <strong className="font-semibold text-neutral-950">quote</strong> once
+          we understand the complexity and time investment required.
         </p>
         <p>
-          Once we understand your project requirements through sampling, we
-          provide a comprehensive{' '}
-          <strong className="font-semibold text-neutral-950">quotation</strong>{' '}
-          that reflects the true cost of bringing your collection to life with
-          our quality standards.
+          Sampling is not just our starting point—it’s how we ensure your
+          collection is produced with precision, transparency, and confidence
+          from the very beginning.
         </p>
       </div>
 
@@ -218,8 +216,8 @@ function Values() {
         <GridList>
           <GridListItem title="Precision">
             Every stitch, every measurement, every detail is executed with
-            meticulous attention. We understand that luxury fashion demands
-            nothing less than perfection.
+            meticulous attention. We understand that your designs demand nothing
+            less than perfection.
           </GridListItem>
           <GridListItem title="Efficiency">
             We pride ourselves on meeting tight deadlines without compromising

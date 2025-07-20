@@ -217,13 +217,6 @@ export default async function About() {
 
       <Team />
 
-      <PageLinks
-        className="mt-24 sm:mt-32 lg:mt-40"
-        title="From the blog"
-        intro="Stay updated with our latest insights on sustainable fashion, industry trends, and behind-the-scenes stories from our South East London studio."
-        pages={blogArticles}
-      />
-
       <ContactSection />
     </>
   )

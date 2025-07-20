@@ -52,12 +52,13 @@ function Header({
 
   return (
     <Container>
-      <div className="flex flex-col items-center justify-between sm:flex-row">
+      <div className="flex flex-col items-center justify-around sm:flex-row">
         <Link
           href="/"
           aria-label="Home"
           onMouseEnter={() => setLogoHovered(true)}
           onMouseLeave={() => setLogoHovered(false)}
+          className="flex w-full"
         >
           <Logo
             invert={invert}
