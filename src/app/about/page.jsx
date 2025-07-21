@@ -27,8 +27,8 @@ function Culture() {
         <GridList>
           <GridListItem title="Excellence" invert>
             Over 20 years of hard-earned experience ensures we maintain the
-            highest standards in every garment we create, from the most delicate
-            fabrics to leather and suede.
+            highest standards in every garment we create from the most delicate
+            fabrics to the most durable and technically demanding materials.
           </GridListItem>
           <GridListItem title="Sustainability" invert>
             We're committed to positive change in the fashion industry through

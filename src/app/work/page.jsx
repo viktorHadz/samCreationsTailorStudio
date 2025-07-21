@@ -11,7 +11,7 @@ import { PageIntro } from '@/components/PageIntro'
 import cawleyDark from '@/images/clients/hannah-cawley/cawleyDarkLogo.svg'
 import rQuinnDark from '@/images/clients/richard-quinn/darkRQuinnLogo.svg'
 import isabelMansDark from '@/images/clients/isabel-mans/darkIsabelMans.svg'
-import fabricFreedomDark from '@/images/clients/fabric-freedom/darkFabricFreedom.svg'
+import fanfareDark from '@/images/clients/fanfare/darkFanfare.svg'
 import serenaButeDark from '@/images/clients/serena-bute/darkSerenaBute.svg'
 import tataNakaDark from '@/images/clients/tata-naka/darkLettersTataNaka.svg'
 import richardMaloneDark from '@/images/clients/richard-malone/darkRichardMalone.svg'
@@ -93,7 +93,7 @@ function CaseStudies({ caseStudies }) {
 const clients = [
   ['Hannah Cawley', cawleyDark],
   ['Richard Quinn', rQuinnDark],
-  ['Fabrics for Freedom', fabricFreedomDark],
+  ['Fanfare', fanfareDark],
   ['Isabel Mans', isabelMansDark],
   ['Tata Naka', tataNakaDark],
   ['Serena Bute', serenaButeDark],

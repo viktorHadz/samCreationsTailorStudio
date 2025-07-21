@@ -12,7 +12,7 @@ import logoHannahCawleyDark from '@/images/clients/hannah-cawley/cawleyDarkLogo.
 import cawleyLight from '@/images/clients/hannah-cawley/cawleyLightLogo.svg'
 import rQuinnLight from '@/images/clients/richard-quinn/lightRQuinnLogo.svg'
 import isabelMansLight from '@/images/clients/isabel-mans/lightIsabelMans.svg'
-import fabricFreedomLight from '@/images/clients/fabric-freedom/lightFabricFreedom.svg'
+import fanfareLight from '@/images/clients/fanfare/lightFanfare.svg'
 import serenaButelight from '@/images/clients/serena-bute/lightSerenaBute.svg'
 import tataNakaLight from '@/images/clients/tata-naka/lightTataNaka.svg'
 import imagePatterns from '@/images/hozPatterns.webp'
@@ -21,7 +21,7 @@ import { loadCaseStudies } from '@/lib/mdx'
 const clients = [
   ['Cawley', cawleyLight],
   ['Quinn', rQuinnLight],
-  ['FabricsForFreedom', fabricFreedomLight],
+  ['Fanfare', fanfareLight],
   ['IsabelMans', isabelMansLight],
   ['Tata Naka', tataNakaLight],
   ['Serena Bute', serenaButelight],
@@ -132,10 +132,10 @@ function Services() {
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          From our dedicated premises in South East London, we work with a broad
-          range of fabrics from the most delicate materials right through to
-          leather and suede. Our highly skilled team ensures everything is
-          completed to the highest standards.
+          From our dedicated premises in South East London, we work with a wide
+          range of fabrics — from the most delicate textiles to more robust and
+          unconventional materials. Our highly skilled team ensures every
+          project is completed to the highest standards.
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -152,9 +152,8 @@ function Services() {
           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
             <ListItem title="Sampling">
               We create precise samples that bring your designs to life. Our
-              team of highly skilled seamstresses work with any fabric your
-              design requires - from the most delicate materials through to
-              leather and suede.
+              team of highly skilled seamstresses work with a broad range of
+              fabrics.
             </ListItem>
             <ListItem title="Alterations">
               Expert alterations for hundreds of community members we've proudly

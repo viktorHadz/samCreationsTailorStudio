@@ -1,5 +1,4 @@
 import { useId } from 'react'
-
 import { Border } from '@/components/Border'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
@@ -7,6 +6,15 @@ import { FadeIn } from '@/components/FadeIn'
 import { Offices } from '@/components/Offices'
 import { PageIntro } from '@/components/PageIntro'
 import { SocialMedia } from '@/components/SocialMedia'
+
+export const FormData = {
+  name: '',
+  email: '',
+  company: '',
+  phone: '',
+  message: '',
+  service: '',
+}
 
 function TextInput({ label, ...props }) {
   let id = useId()
@@ -107,8 +115,8 @@ function ContactDetails() {
       </h2>
       <p className="mt-6 text-base text-neutral-600">
         Located in South East London, our dedicated premises are equipped to
-        handle everything from delicate fabrics to leather and suede with the
-        highest standards of craftsmanship.
+        handle everything your design requires, delivering the highest standards
+        of craftsmanship.
       </p>
 
       <Offices className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2" />
