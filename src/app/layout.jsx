@@ -4,9 +4,8 @@ import '@/styles/tailwind.css'
 
 export const metadata = {
   title: {
-    template: '%s - Studio',
-    default:
-      'Studio - Award winning high fashion tailoring studio based in London',
+    template: '%s - S.A.M. Creations',
+    default: 'Award winning high fashion tailoring studio based in London',
   },
 }
 

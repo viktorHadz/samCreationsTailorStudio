@@ -1,4 +1,6 @@
-import { useId } from 'react'
+'use client'
+
+import { useId, useRef } from 'react'
 import { Border } from '@/components/Border'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
@@ -6,17 +8,10 @@ import { FadeIn } from '@/components/FadeIn'
 import { Offices } from '@/components/Offices'
 import { PageIntro } from '@/components/PageIntro'
 import { SocialMedia } from '@/components/SocialMedia'
+import { sendEmailAction } from './action'
+import { useToast } from '@/components/Toast'
 
-export const FormData = {
-  name: '',
-  email: '',
-  company: '',
-  phone: '',
-  message: '',
-  service: '',
-}
-
-function TextInput({ label, ...props }) {
+function TextInput({ label, requiredAttr = false, ...props }) {
   let id = useId()
 
   return (
@@ -26,6 +21,7 @@ function TextInput({ label, ...props }) {
         id={id}
         {...props}
         placeholder=" "
+        required={requiredAttr === true ? true : false}
         className="peer block w-full border border-neutral-300 bg-transparent px-6 pt-12 pb-4 text-base/6 text-neutral-950 ring-4 ring-transparent transition group-first:rounded-t-2xl group-last:rounded-b-2xl focus:border-neutral-950 focus:ring-neutral-950/5 focus:outline-hidden"
       />
       <label
@@ -52,19 +48,43 @@ function RadioInput({ label, ...props }) {
 }
 
 function ContactForm() {
+  const formRef = useRef(null)
+  const { showSuccess, showError } = useToast()
+
+  const handleSubmit = async (formData) => {
+    const result = await sendEmailAction(formData)
+
+    if (result?.success) {
+      // Reset the form after successful submission
+      formRef.current?.reset()
+      showSuccess('Enquiry sent!', "Thanks! We'll be in touch soon.")
+    } else {
+      showError(
+        'Error in form submission!',
+        result.error || 'Something went wrong. Please try again later',
+      )
+    }
+  }
+
   return (
     <FadeIn className="lg:order-last">
-      <form>
+      <form ref={formRef} action={handleSubmit}>
         <h2 className="font-display text-base font-semibold text-neutral-950">
           Project enquiries
         </h2>
         <div className="isolate mt-6 -space-y-px rounded-2xl bg-white/50">
-          <TextInput label="Name" name="name" autoComplete="name" />
+          <TextInput
+            label="Name"
+            name="name"
+            autoComplete="name"
+            requiredAttr={true}
+          />
           <TextInput
             label="Email"
             type="email"
             name="email"
             autoComplete="email"
+            requiredAttr={true}
           />
           <TextInput
             label="Brand/Company"
@@ -72,7 +92,11 @@ function ContactForm() {
             autoComplete="organization"
           />
           <TextInput label="Phone" type="tel" name="phone" autoComplete="tel" />
-          <TextInput label="Tell us about your project" name="message" />
+          <TextInput
+            label="Tell us about your project"
+            name="message"
+            requiredAttr={true}
+          />
           <div className="border border-neutral-300 px-6 py-8 first:rounded-t-2xl last:rounded-b-2xl">
             <fieldset>
               <legend className="text-base/6 text-neutral-500">
@@ -90,11 +114,7 @@ function ContactForm() {
                   name="service"
                   value="manufacturing"
                 />
-                <RadioInput
-                  label="Something else"
-                  name="service"
-                  value="partnership"
-                />
+                <RadioInput label="Other" name="service" value="Other" />
               </div>
             </fieldset>
           </div>
@@ -129,12 +149,6 @@ function ContactDetails() {
       </Border>
     </FadeIn>
   )
-}
-
-export const metadata = {
-  title: 'Contact Us',
-  description:
-    'Ready to bring your vision to life? Get in touch with the S.A.M. Creations team now.',
 }
 
 export default function Contact() {

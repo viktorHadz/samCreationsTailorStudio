@@ -1,5 +1,17 @@
+import {
+  Body,
+  Container,
+  Head,
+  Html,
+  Preview,
+  Section,
+  Text,
+  Link,
+  Hr,
+} from '@react-email/components'
+
 export const EmailTemplate = ({
-  name,
+  senderName,
   email,
   company,
   phone,
@@ -21,275 +33,225 @@ export const EmailTemplate = ({
   }
 
   return (
-    <div
-      style={{
-        fontFamily: 'system-ui, -apple-system, sans-serif',
-        lineHeight: '1.6',
-        color: '#0a0a0a',
-        maxWidth: '600px',
-        margin: '0 auto',
-        backgroundColor: '#ffffff',
-      }}
-    >
-      {/* Header */}
-      <div
-        style={{
-          borderBottom: '3px solid #dc2626',
-          paddingBottom: '24px',
-          marginBottom: '32px',
-        }}
-      >
-        <h1
-          style={{
-            fontSize: '24px',
-            fontWeight: '600',
-            margin: '0',
-            color: '#0a0a0a',
-          }}
-        >
-          New Project Enquiry
-        </h1>
-        <p
-          style={{
-            fontSize: '14px',
-            color: '#737373',
-            margin: '8px 0 0 0',
-          }}
-        >
-          Submitted on {submittedAt}
-        </p>
-      </div>
+    <Html>
+      <Head />
+      <Preview>New website enquiry from {senderName}</Preview>
+      <Body style={main}>
+        <Container style={container}>
+          {/* Header */}
+          <Section style={headerSection}>
+            <Text style={headerTitle}>New Enquiry</Text>
+            <Text style={headerSubtitle}>Submitted on {submittedAt}</Text>
+          </Section>
 
-      {/* Contact Information Section */}
-      <div style={{ marginBottom: '32px' }}>
-        <h2
-          style={{
-            fontSize: '18px',
-            fontWeight: '600',
-            color: '#0a0a0a',
-            marginBottom: '16px',
-            borderLeft: '4px solid #dc2626',
-            paddingLeft: '12px',
-          }}
-        >
-          Contact Information
-        </h2>
+          <Hr style={redDivider} />
 
-        <table
-          style={{
-            width: '100%',
-            borderCollapse: 'collapse',
-            backgroundColor: '#fafafa',
-            borderRadius: '8px',
-            overflow: 'hidden',
-          }}
-        >
-          <tbody>
-            <tr style={{ borderBottom: '1px solid #e5e5e5' }}>
-              <td
-                style={{
-                  padding: '12px 16px',
-                  fontWeight: '600',
-                  backgroundColor: '#f5f5f5',
-                  width: '140px',
-                  fontSize: '14px',
-                }}
-              >
-                Name:
-              </td>
-              <td
-                style={{
-                  padding: '12px 16px',
-                  fontSize: '14px',
-                }}
-              >
-                {name}
-              </td>
-            </tr>
-            <tr style={{ borderBottom: '1px solid #e5e5e5' }}>
-              <td
-                style={{
-                  padding: '12px 16px',
-                  fontWeight: '600',
-                  backgroundColor: '#f5f5f5',
-                  fontSize: '14px',
-                }}
-              >
-                Email:
-              </td>
-              <td
-                style={{
-                  padding: '12px 16px',
-                  fontSize: '14px',
-                }}
-              >
-                <a
-                  href={`mailto:${email}`}
-                  style={{
-                    color: '#dc2626',
-                    textDecoration: 'none',
-                  }}
-                >
+          {/* Contact Information */}
+          <Section style={section}>
+            <Text style={sectionTitle}>Contact Information</Text>
+
+            <Section style={infoBox}>
+              <Text style={infoRow}>
+                <span style={label}>Name:</span> {senderName}
+              </Text>
+
+              <Text style={infoRow}>
+                <span style={label}>Email:</span>{' '}
+                <Link href={`mailto:${email}`} style={linkStyle}>
                   {email}
-                </a>
-              </td>
-            </tr>
-            {company && (
-              <tr style={{ borderBottom: '1px solid #e5e5e5' }}>
-                <td
-                  style={{
-                    padding: '12px 16px',
-                    fontWeight: '600',
-                    backgroundColor: '#f5f5f5',
-                    fontSize: '14px',
-                  }}
-                >
-                  Brand/Company:
-                </td>
-                <td
-                  style={{
-                    padding: '12px 16px',
-                    fontSize: '14px',
-                  }}
-                >
-                  {company}
-                </td>
-              </tr>
-            )}
-            {phone && (
-              <tr>
-                <td
-                  style={{
-                    padding: '12px 16px',
-                    fontWeight: '600',
-                    backgroundColor: '#f5f5f5',
-                    fontSize: '14px',
-                  }}
-                >
-                  Phone:
-                </td>
-                <td
-                  style={{
-                    padding: '12px 16px',
-                    fontSize: '14px',
-                  }}
-                >
-                  <a
-                    href={`tel:${phone}`}
-                    style={{
-                      color: '#dc2626',
-                      textDecoration: 'none',
-                    }}
-                  >
+                </Link>
+              </Text>
+
+              {company && (
+                <Text style={infoRow}>
+                  <span style={label}>Brand/Company:</span> {company}
+                </Text>
+              )}
+
+              {phone && (
+                <Text style={infoRowLast}>
+                  <span style={label}>Phone:</span>{' '}
+                  <Link href={`tel:${phone}`} style={linkStyle}>
                     {phone}
-                  </a>
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </div>
+                  </Link>
+                </Text>
+              )}
+            </Section>
+          </Section>
 
-      {/* Service Requested */}
-      {service && (
-        <div style={{ marginBottom: '32px' }}>
-          <h2
-            style={{
-              fontSize: '18px',
-              fontWeight: '600',
-              color: '#0a0a0a',
-              marginBottom: '16px',
-              borderLeft: '4px solid #dc2626',
-              paddingLeft: '12px',
-            }}
-          >
-            Service Requested
-          </h2>
-          <div
-            style={{
-              backgroundColor: '#fafafa',
-              padding: '16px',
-              borderRadius: '8px',
-              border: '1px solid #e5e5e5',
-            }}
-          >
-            <span
-              style={{
-                display: 'inline-block',
-                backgroundColor: '#dc2626',
-                color: 'white',
-                padding: '6px 12px',
-                borderRadius: '20px',
-                fontSize: '14px',
-                fontWeight: '500',
-              }}
-            >
-              {serviceLabels[service] || service}
-            </span>
-          </div>
-        </div>
-      )}
+          {/* Service Requested */}
+          {service && (
+            <Section style={section}>
+              <Text style={sectionTitle}>Service Requested</Text>
+              <Section style={serviceBox}>
+                <Text style={serviceBadge}>
+                  {serviceLabels[service] || service}
+                </Text>
+              </Section>
+            </Section>
+          )}
 
-      {/* Project Message */}
-      {message && (
-        <div style={{ marginBottom: '32px' }}>
-          <h2
-            style={{
-              fontSize: '18px',
-              fontWeight: '600',
-              color: '#0a0a0a',
-              marginBottom: '16px',
-              borderLeft: '4px solid #dc2626',
-              paddingLeft: '12px',
-            }}
-          >
-            Project Details
-          </h2>
-          <div
-            style={{
-              backgroundColor: '#fafafa',
-              padding: '20px',
-              borderRadius: '8px',
-              border: '1px solid #e5e5e5',
-              fontSize: '14px',
-              lineHeight: '1.6',
-            }}
-          >
-            {message.split('\n').map((paragraph, index) => (
-              <p
-                key={index}
-                style={{
-                  margin: index === 0 ? '0 0 12px 0' : '12px 0',
-                  ...(index === message.split('\n').length - 1 && {
-                    marginBottom: 0,
-                  }),
-                }}
-              >
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        </div>
-      )}
+          {/* Project Message */}
+          {message && (
+            <Section style={section}>
+              <Text style={sectionTitle}>Project Details</Text>
+              <Section style={messageBox}>
+                {message.split('\n').map((paragraph, index) => (
+                  <Text key={index} style={messageParagraph}>
+                    {paragraph}
+                  </Text>
+                ))}
+              </Section>
+            </Section>
+          )}
 
-      {/* Footer */}
-      <div
-        style={{
-          borderTop: '1px solid #e5e5e5',
-          paddingTop: '24px',
-          textAlign: 'center',
-        }}
-      >
-        <p
-          style={{
-            fontSize: '12px',
-            color: '#737373',
-            margin: '0',
-          }}
-        >
-          This email template was generated by the S.A.M. Creations Website.
-        </p>
-      </div>
-    </div>
+          {/* Footer */}
+          <Hr style={greyDivider} />
+          <Section style={footerSection}>
+            <Text style={footer}>
+              Email template generated by S.A.M. Creations Website. Salutations
+              from Viktor H.
+            </Text>
+          </Section>
+        </Container>
+      </Body>
+    </Html>
   )
 }
+
+// Styles
+const main = {
+  fontFamily: 'system-ui, -apple-system, sans-serif',
+  lineHeight: '1.6',
+  color: '#0a0a0a',
+  backgroundColor: '#ffffff',
+}
+
+const container = {
+  maxWidth: '600px',
+  margin: '0 auto',
+  backgroundColor: '#ffffff',
+}
+
+const headerSection = {
+  paddingBottom: '24px',
+  marginBottom: '16px',
+}
+
+const headerTitle = {
+  fontSize: '24px',
+  fontWeight: '600',
+  margin: '0 0 8px 0',
+  color: '#0a0a0a',
+}
+
+const headerSubtitle = {
+  fontSize: '14px',
+  color: '#737373',
+  margin: '0',
+}
+
+const redDivider = {
+  borderColor: '#dc2626',
+  borderWidth: '3px 0 0 0',
+  margin: '0 0 32px 0',
+}
+
+const greyDivider = {
+  borderColor: '#e5e5e5',
+  borderWidth: '1px 0 0 0',
+  margin: '0 0 24px 0',
+}
+
+const section = {
+  marginBottom: '32px',
+}
+
+const sectionTitle = {
+  fontSize: '18px',
+  fontWeight: '600',
+  color: '#0a0a0a',
+  margin: '0 0 16px 0',
+  borderLeft: '4px solid #dc2626',
+  paddingLeft: '12px',
+}
+
+const infoBox = {
+  backgroundColor: '#fafafa',
+  borderRadius: '8px',
+  border: '1px solid #e5e5e5',
+  padding: '8px 0',
+}
+
+const infoRow = {
+  padding: '8px 16px',
+  margin: '0 0 8px 0',
+  fontSize: '14px',
+  borderBottom: '1px solid #e5e5e5',
+}
+
+const infoRowLast = {
+  padding: '8px 16px',
+  margin: '0',
+  fontSize: '14px',
+}
+
+const label = {
+  fontWeight: '600',
+  backgroundColor: '#f5f5f5',
+  padding: '4px 8px',
+  borderRadius: '4px',
+  marginRight: '8px',
+  display: 'inline-block',
+  width: '120px',
+}
+
+const linkStyle = {
+  color: '#dc2626',
+  textDecoration: 'none',
+}
+
+const serviceBox = {
+  backgroundColor: '#fafafa',
+  padding: '16px',
+  borderRadius: '8px',
+  border: '1px solid #e5e5e5',
+  textAlign: 'center',
+}
+
+const serviceBadge = {
+  display: 'inline-block',
+  backgroundColor: '#dc2626',
+  color: 'white',
+  padding: '8px 16px',
+  borderRadius: '20px',
+  fontSize: '14px',
+  fontWeight: '500',
+  margin: '0',
+}
+
+const messageBox = {
+  backgroundColor: '#fafafa',
+  padding: '20px',
+  borderRadius: '8px',
+  border: '1px solid #e5e5e5',
+}
+
+const messageParagraph = {
+  fontSize: '14px',
+  lineHeight: '1.6',
+  margin: '0 0 12px 0',
+  color: '#0a0a0a',
+}
+
+const footerSection = {
+  textAlign: 'center',
+}
+
+const footer = {
+  fontSize: '12px',
+  color: '#737373',
+  margin: '0',
+}
+
+export default EmailTemplate
