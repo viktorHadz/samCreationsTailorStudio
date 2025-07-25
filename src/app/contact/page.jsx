@@ -76,12 +76,14 @@ function ContactForm() {
           <TextInput
             label="Name"
             name="name"
+            maxLength="100"
             autoComplete="name"
             requiredAttr={true}
           />
           <TextInput
             label="Email"
             type="email"
+            maxLength="100"
             name="email"
             autoComplete="email"
             requiredAttr={true}
@@ -89,12 +91,20 @@ function ContactForm() {
           <TextInput
             label="Brand/Company"
             name="company"
+            maxLength="100"
             autoComplete="organization"
           />
-          <TextInput label="Phone" type="tel" name="phone" autoComplete="tel" />
+          <TextInput
+            label="Phone"
+            type="tel"
+            name="phone"
+            autoComplete="tel"
+            maxLength="100"
+          />
           <TextInput
             label="Tell us about your project"
             name="message"
+            maxLength="2000"
             requiredAttr={true}
           />
           <div className="border border-neutral-300 px-6 py-8 first:rounded-t-2xl last:rounded-b-2xl">
