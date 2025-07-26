@@ -11,8 +11,7 @@ export async function sendEmailAction(formData) {
     headerList.get('x-forwarded-for') ||
     headerList.get('x-real-ip') ||
     '127.0.0.1'
-  const maxRequests = 1
-  if (!rateLimit(ip, maxRequests)) {
+  if (!rateLimit(ip)) {
     return {
       success: false,
       error: 'Too many requests. Please wait before sending another message.',
@@ -41,7 +40,7 @@ export async function sendEmailAction(formData) {
   try {
     const { data, error } = await resend.emails.send({
       from: 'S.A.M. Creations <onboarding@resend.dev>',
-      to: ['s.a.m.creations.yk@gmail.com'],
+      to: [process.env.CONTACT_EMAIL],
       subject: 'New Project Enquiry',
       react: EmailTemplate({
         senderName: name,
