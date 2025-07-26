@@ -12,7 +12,7 @@ export function Logo({ className, invert = false, filled = false, ...props }) {
       <svg
         viewBox="0 0 788 549"
         fill="none"
-        className="group flex size-56 cursor-pointer"
+        className="group flex size-52 cursor-pointer"
       >
         <defs>
           {/* Fills for diamond shape*/}
