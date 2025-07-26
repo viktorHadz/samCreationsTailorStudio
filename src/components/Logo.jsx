@@ -8,11 +8,12 @@ export function Logo({ className, invert = false, filled = false, ...props }) {
   }
 
   return (
-    <div
-      className={clsx('group flex cursor-pointer flex-col', className)}
-      {...props}
-    >
-      <svg viewBox="0 0 788 549" fill="none" className="size-56">
+    <div className={clsx('flex-col', className)} {...props}>
+      <svg
+        viewBox="0 0 788 549"
+        fill="none"
+        className="group flex size-56 cursor-pointer"
+      >
         <defs>
           {/* Fills for diamond shape*/}
           <clipPath id="top-left">
@@ -21,7 +22,7 @@ export function Logo({ className, invert = false, filled = false, ...props }) {
               y="0"
               width="0"
               height="274.625"
-              className="group-hover:animate-expand-left"
+              // className="group-hover:animate-expand-left"
             />
           </clipPath>
           <clipPath id="top-right">
@@ -30,7 +31,7 @@ export function Logo({ className, invert = false, filled = false, ...props }) {
               y="0"
               width="0"
               height="274.625"
-              className="group-hover:animate-expand-right"
+              // className="group-hover:animate-expand-right"
             />
           </clipPath>
           <clipPath id="bottom-left">
@@ -39,7 +40,7 @@ export function Logo({ className, invert = false, filled = false, ...props }) {
               y="274.625"
               width="0"
               height="274.625"
-              className="group-hover:animate-expand-left"
+              // className="group-hover:animate-expand-left"
             />
           </clipPath>
           <clipPath id="bottom-right">
@@ -48,7 +49,7 @@ export function Logo({ className, invert = false, filled = false, ...props }) {
               y="274.625"
               width="0"
               height="274.625"
-              className="group-hover:animate-expand-right"
+              // className="group-hover:animate-expand-right"
             />
           </clipPath>
         </defs>

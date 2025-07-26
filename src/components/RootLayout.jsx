@@ -54,18 +54,8 @@ function Header({
   return (
     <Container>
       <div className="flex flex-col items-center justify-around sm:flex-row">
-        <Link
-          href="/"
-          aria-label="Home"
-          onMouseEnter={() => setLogoHovered(true)}
-          onMouseLeave={() => setLogoHovered(false)}
-          className="flex w-full"
-        >
-          <Logo
-            invert={invert}
-            filled={logoHovered}
-            className={'hidden sm:block'}
-          />
+        <Link href="/" aria-label="Home">
+          <Logo invert={invert} filled={true} className={'hidden sm:block'} />
         </Link>
         <div className="flex w-full justify-end gap-x-8">
           <Button href="/contact" invert={invert}>
