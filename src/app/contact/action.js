@@ -30,7 +30,10 @@ export async function sendEmailAction(formData) {
   if (name.length > 100 || message.length > 2000) {
     return { success: false, error: 'Message or name is too long.' }
   }
-
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if (!emailRegex.test(email)) {
+    return { success: false, error: 'Please enter a valid email address.' }
+  }
   const resend = new Resend(process.env.RESEND_API_KEY)
 
   try {
