@@ -161,8 +161,6 @@ export const metadata = {
 }
 
 export default async function About() {
-  let blogArticles = (await loadArticles()).slice(0, 2)
-
   return (
     <>
       <PageIntro

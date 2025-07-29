@@ -49,15 +49,13 @@ function Header({
   toggleRef,
   invert = false,
 }) {
-  let { logoHovered, setLogoHovered } = useContext(RootLayoutContext)
-
   return (
     <Container>
-      <div className="flex flex-col items-center justify-around sm:flex-row">
-        <Link href="/" aria-label="Home">
-          <Logo invert={invert} filled={true} className={'hidden sm:block'} />
+      <div className="flex flex-col items-center gap-y-4 sm:flex-row sm:justify-between sm:gap-y-0">
+        <Link href="/" aria-label="Home" className="flex-shrink-0">
+          <Logo invert={invert} />
         </Link>
-        <div className="flex w-full justify-end gap-x-8">
+        <div className="flex w-full items-center justify-between sm:w-auto sm:gap-x-8">
           <Button href="/contact" invert={invert}>
             Contact us
           </Button>
@@ -233,7 +231,7 @@ function RootLayoutInner({ children }) {
         >
           <motion.div
             layout
-            className="relative isolate flex w-full flex-col pt-9"
+            className="relative isolate flex w-full flex-col pt-76 sm:pt-64"
           >
             <GridPattern
               className="absolute inset-x-0 -top-14 -z-10 h-[1000px] w-full fill-neutral-50 stroke-neutral-950/5 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)]"

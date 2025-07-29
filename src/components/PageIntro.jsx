@@ -5,7 +5,7 @@ import { FadeIn } from '@/components/FadeIn'
 
 export function PageIntro({ eyebrow, title, children, centered = false }) {
   return (
-    <Container className={clsx('mt-24 sm:mt-64', centered && 'text-center')}>
+    <Container className={clsx(centered && 'text-center')}>
       <FadeIn>
         <h1>
           <span className="block font-display text-base font-semibold text-neutral-950">
