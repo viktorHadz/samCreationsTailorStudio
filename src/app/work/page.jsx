@@ -132,7 +132,17 @@ function Clients() {
 
 export const metadata = {
   title: 'Our Work',
-  description: 'Discover our achievements and more.',
+  description:
+    'See select projects and achievements by S.A.M. Creations delivering CMT, sampling, alterations and garment production for designers retailers and global brands.',
+    keywords: [
+    'garment manufacturing projects',
+    'CMT case studies London',
+    'designer garment production',
+    'fashion manufacturing achievements',
+    'London tailoring projects',
+    'garment production results',
+    'CMT work portfolio',
+  ],
 }
 
 export default async function Work() {

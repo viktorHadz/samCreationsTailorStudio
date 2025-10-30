@@ -253,8 +253,18 @@ function Values() {
 export const metadata = {
   title: 'Our Process',
   description:
-    'From sampling to delivery, discover how S.A.M. Creations transforms luxury fashion designs into impeccably crafted garments.',
+    'From first sample to final production, discover how S.A.M. Creations manages every stage of garment manufacturing in London with precision and reliability.',
+  keywords: [
+    'CMT production process',
+    'garment manufacturing workflow',
+    'fashion sampling process',
+    'garment quality control London',
+    'London clothing production stages',
+    'CMT production methods',
+    'tailoring production process',
+  ],
 }
+
 
 export default function Process() {
   return (

@@ -7,7 +7,16 @@ import { loadGalleryImages } from '@/lib/mdx'
 export const metadata = {
   title: 'Gallery',
   description:
-    'Explore our portfolio of exceptional garments, showcasing our commitment to precision, quality, and creative partnership with luxury fashion designers.',
+    'Explore garments and projects from S.A.M. Creations’ London studio, showcasing expert tailoring, CMT, sampling and precision garment manufacturing.',
+  keywords: [
+    'garment gallery London',
+    'fashion manufacturing showcase',
+    'CMT studio portfolio',
+    'tailored garments London',
+    'garment production examples',
+    'London tailoring portfolio',
+    'fashion studio work samples',
+  ],
 }
 
 export default async function GalleryPage() {

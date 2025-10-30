@@ -157,8 +157,18 @@ function Team() {
 export const metadata = {
   title: 'About Us',
   description:
-    'Founded in 2015, S.A.M. Creations is a family business specializing in luxury fashion manufacturing with over 20 years of tailoring expertise.',
+    'Founded in 2015, S.A.M. Creations is a London family business with over 20 years of tailoring expertise in CMT, sampling, alterations and garment manufacturing.',
+  keywords: [
+  'S.A.M. Creations London',
+  'experienced garment makers',
+  'family tailoring studio',
+  'London garment specialists',
+  'fashion production experience',
+  'tailoring expertise UK',
+  'garment manufacturing background',
+],
 }
+
 
 export default async function About() {
   return (

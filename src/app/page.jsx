@@ -8,6 +8,7 @@ import { List, ListItem } from '@/components/List'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StylizedImage } from '@/components/StylizedImage'
 import { Testimonial } from '@/components/Testimonial'
+
 import logoHannahCawleyDark from '@/images/clients/hannah-cawley/cawleyDarkLogo.svg'
 import cawleyLight from '@/images/clients/hannah-cawley/cawleyLightLogo.svg'
 import rQuinnLight from '@/images/clients/richard-quinn/lightRQuinnLogo.svg'
@@ -15,8 +16,16 @@ import isabelMansLight from '@/images/clients/isabel-mans/lightIsabelMans.svg'
 import fanfareLight from '@/images/clients/fanfare/lightFanfare.svg'
 import serenaButelight from '@/images/clients/serena-bute/lightSerenaBute.svg'
 import tataNakaLight from '@/images/clients/tata-naka/lightTataNaka.svg'
+import shedNo2Light from '@/images/clients/marcus-shed-no2/lightShedNo2.svg'
 import imagePatterns from '@/images/hozPatterns.webp'
+
+import cushionsCase from '@/images/softgoods/cushionsCase.webp'
+import bannerRed from '@/images/softgoods/bannerRed.webp'
+import curtains from '@/images/softgoods/curtains.webp'
+import bespokePieces from '@/images/softgoods/bespokePieces.webp'
+
 import { loadCaseStudies } from '@/lib/mdx'
+import { Border } from '@/components/Border'
 
 const clients = [
   ['Cawley', cawleyLight],
@@ -25,6 +34,7 @@ const clients = [
   ['IsabelMans', isabelMansLight],
   ['Tata Naka', tataNakaLight],
   ['Serena Bute', serenaButelight],
+  ['Shed No 2', shedNo2Light],
 ]
 
 function Clients() {
@@ -40,8 +50,10 @@ function Clients() {
         <FadeInStagger faster>
           <ul
             role="list"
-            className="my-10 grid grid-cols-2 items-center gap-x-8 gap-y-10 lg:grid-cols-3"
+            className="my-10 grid grid-cols-2 items-center gap-x-8 gap-y-10 lg:grid-cols-3 justify-center"
           >
+             
+
             {clients.map(([client, logo]) => (
               <li key={client} className="flex items-center justify-center">
                 <FadeIn>
@@ -66,7 +78,7 @@ function CaseStudies({ caseStudies }) {
   return (
     <>
       <SectionIntro
-        title="Bringing exceptional designers' visions to life"
+        title="Bringing your visions to life"
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
@@ -179,10 +191,61 @@ function Services() {
     </>
   )
 }
+const items = [
+  { title: 'Cushion covers & soft furnishings', img: cushionsCase, alt: 'Cushion covers in production inside suitcase' },
+  { title: 'Curtains & interior textiles', img: curtains, alt: 'Tailored curtain detail' },
+  { title: 'Event & retail banners', img: bannerRed, alt: 'Red fabric banner on black fabric background' },
+  { title: 'Bespoke small-batch pieces', img: bespokePieces, alt: 'Detail of custom stitched soft good' },
+]
+
+function SoftGoodsShowcase() {
+  return (
+    <Container className="mt-24 sm:mt-32 lg:mt-40">
+      <FadeIn>
+        <h2 className="font-display text-2xl font-semibold text-neutral-950">
+          Beyond garments: soft goods & interior textiles
+        </h2>
+        <p className="mt-4 text-neutral-600">
+          At S.A.M. Creations Ltd, we also provide professional sewing for soft furnishings,
+          interior textiles, and event projects. From cushion covers and curtains to banners and
+          bespoke fabric items, we deliver small-batch and bespoke work with the same precision,
+          quality, and care as our garment production.
+        </p>
+      </FadeIn>
+
+      <FadeInStagger className="mt-10" faster>
+        <ul role="list" className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {items.map(({ title, img, alt }) => (
+            <li key={title} className="group">
+              <FadeIn className="overflow-hidden">
+                <Border className="p-4">
+                  <div className="aspect-[4/3] overflow-hidden rounded-xl">
+                    <Image src={img} alt={alt} className="h-full w-full object-cover" />
+                  </div>
+                  <h3 className="mt-4 text-sm font-medium text-neutral-900">{title}</h3>
+                </Border>
+              </FadeIn>
+            </li>
+          ))}
+        </ul>
+      </FadeInStagger>
+    </Container>
+  )
+}
 
 export const metadata = {
+  title: 'SAM Creations - London Garment Manufacturing',
   description:
-    'We are an award-winning, London-based tailoring studio focused on production and manufacturing, while also providing alterations for the community.',
+    'S.A.M. Creations Ltd is a London tailoring and garment manufacturing studio offering CMT, sampling, alterations and production for designers and enterprise clients.',
+  keywords: [
+    'garment manufacturing London',
+    'CMT services UK',
+    'clothing production for designers',
+    'tailoring and alterations',
+    'sampling and garment development',
+    'garment production company London',
+    'fashion manufacturing services',
+  ],
 }
 
 export default async function Home() {
@@ -233,6 +296,8 @@ export default async function Home() {
       </Testimonial>
 
       <Services />
+
+    <SoftGoodsShowcase/>
 
       <ContactSection />
     </>
