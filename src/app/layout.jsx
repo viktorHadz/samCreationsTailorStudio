@@ -10,7 +10,7 @@ export const metadata = {
   },
   description:
     'Award-winning London tailoring and garment manufacturing studio specialising in CMT, sampling, alterations and full-scale production for designers and brands.',
-    keywords: [
+  keywords: [
     'garment manufacturer London',
     'CMT studio London',
     'clothing production UK',
@@ -19,7 +19,9 @@ export const metadata = {
     'garment manufacturing services',
     'London garment production',
   ],
-  alternates: { canonical: '/' },
+  alternates: {
+    canonical: 'https://samcreations.uk',
+  },
   robots: { index: true, follow: true },
   openGraph: {
     type: 'website',

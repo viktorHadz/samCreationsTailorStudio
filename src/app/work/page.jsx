@@ -134,7 +134,10 @@ export const metadata = {
   title: 'Our Work',
   description:
     'See select projects and achievements by S.A.M. Creations delivering CMT, sampling, alterations and garment production for designers retailers and global brands.',
-    keywords: [
+  alternates: {
+    canonical: 'https://samcreations.uk/work',
+  },
+  keywords: [
     'garment manufacturing projects',
     'CMT case studies London',
     'designer garment production',

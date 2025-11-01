@@ -52,7 +52,7 @@ function Clients() {
             role="list"
             className="my-10 grid grid-cols-2 items-center gap-x-8 gap-y-10 lg:grid-cols-3 justify-center"
           >
-             
+
 
             {clients.map(([client, logo]) => (
               <li key={client} className="flex items-center justify-center">
@@ -264,17 +264,20 @@ export default async function Home() {
           <p className="mt-6 text-xl text-neutral-600">
             We are{' '}
             <span className="font-semibold text-red-700">
-              S.A.M. Creations Ltd
+              S.A.M. Creations
             </span>{' '}
             — experts in <span className="font-bold">Sampling</span>,{' '}
-            <span className="font-bold">Alterations </span> and{' '}
-            <span className="font-bold">Manufacturing</span> for the fashion
-            industry. Based in South East London, we collaborate with{' '}
+            <span className="font-bold">Alterations</span>, and{' '}
+            <span className="font-bold">Manufacturing</span>. Based in South East London,
+            we collaborate with{' '}
             <span className="font-bold">fashion houses</span>,{' '}
             <span className="font-bold">emerging designers</span>, and{' '}
-            <span className="font-bold">the wider community</span> to bring your
-            visions to life with uncompromising quality and craftsmanship since
-            2015.
+            <span className="font-bold">businesses across the garment and textile industries</span>.
+            We also proudly serve{' '}
+            <span className="font-bold">the wider community</span> through our professional
+            alterations service, helping individuals look and feel their best. Every piece
+            we create reflects our commitment to precision, quality, and craftsmanship
+            since 2015.
           </p>
         </FadeIn>
       </Container>
@@ -297,7 +300,7 @@ export default async function Home() {
 
       <Services />
 
-    <SoftGoodsShowcase/>
+      <SoftGoodsShowcase />
 
       <ContactSection />
     </>

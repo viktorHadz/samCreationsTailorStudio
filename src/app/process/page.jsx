@@ -254,6 +254,9 @@ export const metadata = {
   title: 'Our Process',
   description:
     'From first sample to final production, discover how S.A.M. Creations manages every stage of garment manufacturing in London with precision and reliability.',
+  alternates: {
+    canonical: 'https://samcreations.uk/process',
+  },
   keywords: [
     'CMT production process',
     'garment manufacturing workflow',

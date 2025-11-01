@@ -161,6 +161,7 @@ function ContactDetails() {
   )
 }
 
+
 export default function Contact() {
   return (
     <>

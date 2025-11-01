@@ -8,6 +8,9 @@ export const metadata = {
   title: 'Gallery',
   description:
     'Explore garments and projects from S.A.M. Creations’ London studio, showcasing expert tailoring, CMT, sampling and precision garment manufacturing.',
+  alternates: {
+    canonical: 'https://samcreations.uk/gallery',
+  },
   keywords: [
     'garment gallery London',
     'fashion manufacturing showcase',
