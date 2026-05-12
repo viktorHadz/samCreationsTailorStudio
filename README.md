@@ -63,7 +63,7 @@ The contact form depends on two environment variables:
 
 ## Deployment Notes
 
-This app deploys as a standard Next.js server build. A PM2 config is included in `ecosystem.config.js` for process management in production, but the README intentionally keeps deployment guidance light and focused on what is already present in the repo.
+This app deploys as a standard Next.js server build. A PM2 config is included in `ecosystem.config.js` for process management in production.
 
 ## Maintaining Content
 
