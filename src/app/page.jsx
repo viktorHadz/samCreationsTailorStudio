@@ -25,6 +25,7 @@ import curtains from '@/images/softgoods/curtains.webp'
 import bespokePieces from '@/images/softgoods/bespokePieces.webp'
 
 import { loadCaseStudies } from '@/lib/mdx'
+import { createMetadata } from '@/lib/metadata'
 import { Border } from '@/components/Border'
 
 const clients = [
@@ -233,20 +234,12 @@ function SoftGoodsShowcase() {
   )
 }
 
-export const metadata = {
+export const metadata = createMetadata({
   title: 'SAM Creations - London Garment Manufacturing',
   description:
     'S.A.M. Creations Ltd is a London tailoring and garment manufacturing studio offering CMT, sampling, alterations and production for designers and enterprise clients.',
-  keywords: [
-    'garment manufacturing London',
-    'CMT services UK',
-    'clothing production for designers',
-    'tailoring and alterations',
-    'sampling and garment development',
-    'garment production company London',
-    'fashion manufacturing services',
-  ],
-}
+  absoluteTitle: true,
+})
 
 export default async function Home() {
   let caseStudies = (await loadCaseStudies()).slice(0, 3)

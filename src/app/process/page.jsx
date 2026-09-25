@@ -12,6 +12,7 @@ import { TagList, TagListItem } from '@/components/TagList'
 import imageSampling from '@/images/sampling.webp'
 import imageProduction from '@/images/production.webp'
 import imageQuality from '@/images/qualityControl.webp'
+import { createMetadata } from '@/lib/metadata'
 
 function Section({ title, image, children }) {
   return (
@@ -250,24 +251,12 @@ function Values() {
   )
 }
 
-export const metadata = {
+export const metadata = createMetadata({
   title: 'Our Process',
   description:
     'From first sample to final production, discover how S.A.M. Creations manages every stage of garment manufacturing in London with precision and reliability.',
-  alternates: {
-    canonical: 'https://samcreations.uk/process',
-  },
-  keywords: [
-    'CMT production process',
-    'garment manufacturing workflow',
-    'fashion sampling process',
-    'garment quality control London',
-    'London clothing production stages',
-    'CMT production methods',
-    'tailoring production process',
-  ],
-}
-
+  path: '/process',
+})
 
 export default function Process() {
   return (

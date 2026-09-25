@@ -14,6 +14,16 @@ import { unifiedConditional } from 'unified-conditional'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
+  poweredByHeader: false,
+  async redirects() {
+    return [
+      {
+        source: '/gallery/photos',
+        destination: '/gallery',
+        permanent: true,
+      },
+    ]
+  },
   async headers() {
     return [
       {

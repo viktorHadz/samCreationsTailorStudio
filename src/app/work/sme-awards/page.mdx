@@ -1,5 +1,6 @@
 import logo from '@/images/awards/sme-awards-logo.webp'
 import imageHero from '@/images/awards/sme-awards-hero.webp'
+import { createMetadata } from '@/lib/metadata'
 
 export const caseStudy = {
   client: 'SME News Greater London Enterprise Awards',
@@ -17,24 +18,11 @@ export const caseStudy = {
   service: 'Sustainable Fashion Manufacturing',
 }
 
-export const metadata = {
-  title: `${caseStudy.title} | S.A.M. Creations`,
+export const metadata = createMetadata({
+  title: caseStudy.title,
   description: caseStudy.description,
-  alternates: {
-    canonical:
-      'https://samcreations.uk/work/sme-awards',
-  },
-  keywords: [
-    'sustainable garment manufacturing London',
-    'eco conscious fashion manufacturer',
-    'upcycled clothing production UK',
-    'made to order fashion studio',
-    'sustainable womenswear manufacturing',
-    'ethical fashion production London',
-    'award winning sustainable manufacturer',
-  ],
-}
-
+  path: '/work/sme-awards',
+})
 
 ## Award-Winning Sustainable Manufacturing
 

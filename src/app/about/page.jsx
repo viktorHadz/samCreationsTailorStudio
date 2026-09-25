@@ -8,6 +8,7 @@ import { PageLinks } from '@/components/PageLinks'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StatList, StatListItem } from '@/components/StatList'
 import { loadArticles } from '@/lib/mdx'
+import { createMetadata } from '@/lib/metadata'
 
 function Culture() {
   return (
@@ -154,24 +155,12 @@ function Team() {
   )
 }
 
-export const metadata = {
+export const metadata = createMetadata({
   title: 'About Us',
   description:
     'Founded in 2015, S.A.M. Creations is a London family business with over 20 years of tailoring expertise in CMT, sampling, alterations and garment manufacturing.',
-  alternates: {
-    canonical: 'https://samcreations.uk/about',
-  },
-  keywords: [
-    'S.A.M. Creations London',
-    'experienced garment makers',
-    'family tailoring studio',
-    'London garment specialists',
-    'fashion production experience',
-    'tailoring expertise UK',
-    'garment manufacturing background',
-  ],
-}
-
+  path: '/about',
+})
 
 export default async function About() {
   return (

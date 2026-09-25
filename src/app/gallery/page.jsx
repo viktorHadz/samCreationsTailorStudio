@@ -3,24 +3,14 @@ import { Container } from '@/components/Container'
 import { PageIntro } from '@/components/PageIntro'
 import { Gallery } from '@/components/Gallery'
 import { loadGalleryImages } from '@/lib/mdx'
+import { createMetadata } from '@/lib/metadata'
 
-export const metadata = {
+export const metadata = createMetadata({
   title: 'Gallery',
   description:
     'Explore garments and projects from S.A.M. Creations’ London studio, showcasing expert tailoring, CMT, sampling and precision garment manufacturing.',
-  alternates: {
-    canonical: 'https://samcreations.uk/gallery',
-  },
-  keywords: [
-    'garment gallery London',
-    'fashion manufacturing showcase',
-    'CMT studio portfolio',
-    'tailored garments London',
-    'garment production examples',
-    'London tailoring portfolio',
-    'fashion studio work samples',
-  ],
-}
+  path: '/gallery',
+})
 
 export default async function GalleryPage() {
   let galleryArticles = await loadGalleryImages()
@@ -33,6 +23,7 @@ export default async function GalleryPage() {
           id: `${articleIndex}-${imgIndex}`,
           src: img.src,
           title: article.title,
+          alt: img.alt,
           href: article.href,
         }))
       }
@@ -42,6 +33,7 @@ export default async function GalleryPage() {
           id: articleIndex,
           src: article.image?.src,
           title: article.title,
+          alt: article.image?.alt || article.title,
           href: article.href,
         },
       ]

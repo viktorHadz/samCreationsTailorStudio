@@ -1,5 +1,6 @@
 import logo from '@/images/awards/global-awards-logo.webp'
 import imageHero from '@/images/awards/global-awards-hero.webp'
+import { createMetadata } from '@/lib/metadata'
 
 export const caseStudy = {
   client: 'Corporate Livewire Global Awards',
@@ -17,23 +18,11 @@ export const caseStudy = {
   service: 'Master Tailoring',
 }
 
-export const metadata = {
-  title: `${caseStudy.title} | S.A.M. Creations`,
+export const metadata = createMetadata({
+  title: caseStudy.title,
   description: caseStudy.description,
-  alternates: {
-    canonical: 'https://samcreations.uk/work/global-awards',
-  },
-  keywords: [
-    'tailor of the year award',
-    'luxury tailoring London',
-    'award winning tailor UK',
-    'high fashion garment manufacturing',
-    'precision tailoring craftsmanship',
-    'bespoke tailoring excellence',
-    'international tailoring recognition',
-  ],
-}
-
+  path: '/work/global-awards',
+})
 
 ## International Recognition
 

@@ -10,6 +10,7 @@ const navigation = [
   { title: 'Achievements', href: '/work' },
   { title: 'Gallery', href: '/gallery' },
   { title: 'Contact', href: '/contact' },
+  { title: 'Privacy', href: '/privacy' },
 ]
 
 export function Footer() {

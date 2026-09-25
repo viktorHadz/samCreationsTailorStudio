@@ -18,6 +18,7 @@ import richardMaloneDark from '@/images/clients/richard-malone/darkRichardMalone
 import clioPeppiattDark from '@/images/clients/clio-peppiatt/clioPeppiattDark.svg'
 import { formatDate } from '@/lib/formatDate'
 import { loadCaseStudies } from '@/lib/mdx'
+import { createMetadata } from '@/lib/metadata'
 
 function CaseStudies({ caseStudies }) {
   return (
@@ -130,23 +131,12 @@ function Clients() {
   )
 }
 
-export const metadata = {
+export const metadata = createMetadata({
   title: 'Our Work',
   description:
     'See select projects and achievements by S.A.M. Creations delivering CMT, sampling, alterations and garment production for designers retailers and global brands.',
-  alternates: {
-    canonical: 'https://samcreations.uk/work',
-  },
-  keywords: [
-    'garment manufacturing projects',
-    'CMT case studies London',
-    'designer garment production',
-    'fashion manufacturing achievements',
-    'London tailoring projects',
-    'garment production results',
-    'CMT work portfolio',
-  ],
-}
+  path: '/work',
+})
 
 export default async function Work() {
   let caseStudies = await loadCaseStudies()

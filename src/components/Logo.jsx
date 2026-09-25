@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo, useCallback } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import clsx from 'clsx'
 
 // Constants
@@ -24,27 +24,10 @@ export function Logo({ className, invert = false, filled = false, ...props }) {
     [invert],
   )
 
-  const [isMobile, setIsMobile] = useState(false)
-  const [isAnimated, setIsAnimated] = useState(false)
   const [showPulse, setShowPulse] = useState(false)
 
   useEffect(() => {
     if (typeof window === 'undefined') return
-
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
-    }
-
-    checkMobile()
-
-    // Debounce resize events
-    let resizeTimer
-    const handleResize = () => {
-      clearTimeout(resizeTimer)
-      resizeTimer = setTimeout(checkMobile, 150)
-    }
-
-    window.addEventListener('resize', handleResize)
 
     // Handle pulse animation on mobile
     let pulseTimeoutId
@@ -63,17 +46,9 @@ export function Logo({ className, invert = false, filled = false, ...props }) {
 
     // Cleanup function
     return () => {
-      window.removeEventListener('resize', handleResize)
-      clearTimeout(resizeTimer)
       if (pulseTimeoutId) clearTimeout(pulseTimeoutId)
     }
   }, [])
-
-  const handleClick = useCallback(() => {
-    if (isMobile) {
-      setIsAnimated((prev) => !prev)
-    }
-  }, [isMobile])
 
   return (
     <div className={clsx('flex flex-col', className)} {...props}>
@@ -81,24 +56,11 @@ export function Logo({ className, invert = false, filled = false, ...props }) {
         viewBox="0 0 788 549"
         fill="none"
         className={clsx(
-          'h-52 w-52 cursor-pointer transition-transform focus:outline-none',
-          isMobile ? 'cursor-pointer' : 'group cursor-default',
+          'group h-52 w-52 cursor-default transition-transform',
           showPulse && 'animate-pulse',
         )}
-        onClick={handleClick}
-        role={isMobile ? 'button' : 'img'}
+        role="img"
         aria-label="S.A.M. Creations Logo"
-        tabIndex={isMobile ? 0 : -1}
-        onKeyDown={
-          isMobile
-            ? (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault()
-                  handleClick()
-                }
-              }
-            : undefined
-        }
       >
         {/* Top diamond */}
         <path
@@ -108,8 +70,7 @@ export function Logo({ className, invert = false, filled = false, ...props }) {
           strokeWidth="0"
           className={clsx(
             'transition-transform duration-500 ease-in-out',
-            !isMobile && 'group-hover:-translate-y-12',
-            isMobile && isAnimated && '-translate-y-12',
+            'group-hover:-translate-y-12',
           )}
         />
 
@@ -121,8 +82,7 @@ export function Logo({ className, invert = false, filled = false, ...props }) {
           strokeWidth="0"
           className={clsx(
             'transition-transform duration-500 ease-in-out',
-            !isMobile && 'group-hover:translate-y-12',
-            isMobile && isAnimated && 'translate-y-12',
+            'group-hover:translate-y-12',
           )}
         />
 
@@ -139,8 +99,7 @@ export function Logo({ className, invert = false, filled = false, ...props }) {
             fill={colors.text}
             className={clsx(
               '-translate-y-2 tracking-tight opacity-0 transition-all duration-500 ease-out',
-              !isMobile && 'group-hover:translate-y-0 group-hover:opacity-100',
-              isMobile && isAnimated && 'translate-y-0 opacity-100',
+              'group-hover:translate-y-0 group-hover:opacity-100',
             )}
             style={{
               transitionDelay: ANIMATION_DELAYS.text1,
@@ -155,8 +114,7 @@ export function Logo({ className, invert = false, filled = false, ...props }) {
             fill={colors.text}
             className={clsx(
               '-translate-y-2 opacity-0 transition-all duration-500 ease-out',
-              !isMobile && 'group-hover:translate-y-0 group-hover:opacity-100',
-              isMobile && isAnimated && 'translate-y-0 opacity-100',
+              'group-hover:translate-y-0 group-hover:opacity-100',
             )}
             style={{
               transitionDelay: ANIMATION_DELAYS.text2,
@@ -170,8 +128,7 @@ export function Logo({ className, invert = false, filled = false, ...props }) {
             fill={colors.text}
             className={clsx(
               '-translate-y-2 opacity-0 transition-all duration-500 ease-out',
-              !isMobile && 'group-hover:translate-y-0 group-hover:opacity-100',
-              isMobile && isAnimated && 'translate-y-0 opacity-100',
+              'group-hover:translate-y-0 group-hover:opacity-100',
             )}
             style={{
               transitionDelay: ANIMATION_DELAYS.text3,
@@ -188,8 +145,7 @@ export function Logo({ className, invert = false, filled = false, ...props }) {
           fill={colors.alwaysRed}
           className={clsx(
             'scale-x-0 transition-transform duration-[400ms] ease-out',
-            !isMobile && 'group-hover:scale-x-100',
-            isMobile && isAnimated && 'scale-x-100',
+            'group-hover:scale-x-100',
           )}
           style={{
             transformOrigin: 'center',
@@ -217,8 +173,7 @@ export function Logo({ className, invert = false, filled = false, ...props }) {
           fill={colors.alwaysRed}
           className={clsx(
             'scale-x-0 transition-transform duration-[400ms] ease-out',
-            !isMobile && 'group-hover:scale-x-100',
-            isMobile && isAnimated && 'scale-x-100',
+            'group-hover:scale-x-100',
           )}
           style={{
             transformOrigin: 'center',
@@ -239,8 +194,7 @@ export function Logo({ className, invert = false, filled = false, ...props }) {
             fill={colors.text}
             className={clsx(
               'translate-y-2 opacity-0 transition-all duration-500 ease-out',
-              !isMobile && 'group-hover:translate-y-0 group-hover:opacity-100',
-              isMobile && isAnimated && 'translate-y-0 opacity-100',
+              'group-hover:translate-y-0 group-hover:opacity-100',
             )}
             style={{
               transitionDelay: ANIMATION_DELAYS.text4,
@@ -255,8 +209,7 @@ export function Logo({ className, invert = false, filled = false, ...props }) {
             fill={colors.text}
             className={clsx(
               'translate-y-2 tracking-tighter opacity-0 transition-all duration-500 ease-out',
-              !isMobile && 'group-hover:translate-y-0 group-hover:opacity-100',
-              isMobile && isAnimated && 'translate-y-0 opacity-100',
+              'group-hover:translate-y-0 group-hover:opacity-100',
             )}
             style={{
               transitionDelay: ANIMATION_DELAYS.text5,
@@ -270,4 +223,3 @@ export function Logo({ className, invert = false, filled = false, ...props }) {
     </div>
   )
 }
-

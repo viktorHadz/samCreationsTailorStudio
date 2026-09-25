@@ -1,5 +1,6 @@
 import logo from '@/images/awards/kat-rose-logo.svg'
 import imageHero from '@/images/awards/kat-rose-hero.webp'
+import { createMetadata } from '@/lib/metadata'
 
 export const caseStudy = {
   client: 'Kat & Rose Brand Launch',
@@ -17,22 +18,11 @@ export const caseStudy = {
   service: 'Sustainable Brand Development',
 }
 
-export const metadata = {
-  title: `${caseStudy.title} | S.A.M. Creations`,
+export const metadata = createMetadata({
+  title: caseStudy.title,
   description: caseStudy.description,
-  alternates: {
-    canonical: 'https://samcreations.uk/work/kat-rose-launch',
-  },
-  keywords: [
-    'sustainable fashion brand London',
-    'upcycled womenswear UK',
-    'made to order clothing production',
-    'eco friendly garment manufacturing',
-    'ethical tailoring London',
-    'sustainable womenswear launch',
-    'slow fashion brand development',
-  ],
-}
+  path: '/work/kat-rose-launch',
+})
 
 ## Sustainable Fashion Innovation
 

@@ -1,5 +1,3 @@
-'use client'
-
 import Image from 'next/image'
 
 export function Gallery({ images }) {
@@ -9,9 +7,8 @@ export function Gallery({ images }) {
         <div key={image.id || index} className="mb-4 break-inside-avoid">
           <Image
             src={image.image?.src || image.src}
-            alt={image.title}
-            width={400}
-            height={600}
+            alt={image.alt}
+            sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             className="w-full rounded-lg"
           />
         </div>
