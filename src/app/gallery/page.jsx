@@ -1,7 +1,7 @@
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { PageIntro } from '@/components/PageIntro'
-import { Gallery } from '@/components/Gallery'
+import { GalleryLightbox } from '@/components/GalleryLightbox'
 import { loadGalleryImages } from '@/lib/mdx'
 import { createMetadata } from '@/lib/metadata'
 
@@ -42,16 +42,16 @@ export default async function GalleryPage() {
 
   return (
     <>
-      <PageIntro eyebrow="Gallery" title="Showcasing our finest craftsmanship">
+      <PageIntro eyebrow="Gallery" title="Craftsmanship, up close">
         <p>
-          Explore our portfolio of exceptional garments, each piece representing
-          our commitment to precision, quality, and creative partnership with
-          luxury fashion designers.
+          Explore garments, textile details and bespoke pieces from our South
+          East London studio, each reflecting the precision and care we bring to
+          sampling, alterations and production.
         </p>
       </PageIntro>
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
-        <Gallery images={images} />
+        <GalleryLightbox images={images} />
       </Container>
 
       <ContactSection />
